@@ -1,0 +1,29 @@
+.amenities_header_wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.amh_left {
+    text-align: left;
+}
+
+.amh_rigt {
+    text-align: right;
+}
+
+.amenities_header_wrapper > label {
+    font-family: 'Jost';
+    letter-spacing: 3px;
+    font-size: 1.1em;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+.amenities_header_wrapper > h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 200;
+    margin-top: 0;
+    font-size: 3em;
+}

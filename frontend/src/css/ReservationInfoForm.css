@@ -1,0 +1,126 @@
+.reservation_info_form_grid_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    row-gap: 2px;
+    column-gap: 2px;
+}
+
+.reservation_info_form_grid_wrapper_item {
+    position: relative;
+}
+
+.reservation_info_form_grid_wrapper_item > input {
+    width: 100%;
+    height: 80px;
+
+    background-color: #f2ede4;
+    border: 2px solid #c9bba8;
+
+    padding: 20px;
+    padding-top: 35px;
+    font-family: 'Jost';
+    font-size: 1em;
+}
+
+.reservation_info_form_grid_wrapper_item > label {
+    font-family: 'Jost';
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    opacity: 0.4;
+
+    position: absolute;
+    left: 20px;
+    top: 15px;
+
+    color: rgb(158, 158, 192);
+}
+
+.payment_grid_wrapper_item {
+    position: relative;
+}
+
+.payment_grid_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.payment_grid_wrapper_item > input {
+    width: 100%;
+    height: 80px;
+
+    background-color: #f2ede4;
+    padding: 20px;
+    padding-top: 35px;
+    border: 1.5px solid #c9bba8;
+
+    font-family: 'Jost';
+}
+
+.payment_grid_wrapper_item > label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    font-family: 'Jost';
+    letter-spacing: 1.5px;
+    font-size: 0.6em;
+    opacity: 0.8;
+
+    color: rgb(158, 158, 192);
+}
+
+.payment_grid_wrapper_wrapper {
+    display: flex;
+    gap: 2px;
+    width: 100%;
+}
+
+.payment_grid_wrapper_wrapper > .payment_grid_wrapper_item {
+    flex: 1;
+}
+
+.payment_method_selection {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 10px;
+}
+
+.payment_method_selection_item {
+    width: fit-content;
+    height: 40px;
+    padding: 0 10px;
+    padding-top: 5px;
+
+    border: 2px solid #c9bba8;
+    font-family: 'Jost';
+    letter-spacing: 1.5px;
+
+    background-color: #f7f3ec;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.payment_method_selection_item > label {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.payment_method_selection > p {
+    font-family: 'Jost';
+    letter-spacing: 0.9px;
+    opacity: 0.6;
+
+    font-size: 0.8em;
+
+    margin-top: 10px;
+}
+
+.selected-item {
+    background-color: #e3ddd4;
+}

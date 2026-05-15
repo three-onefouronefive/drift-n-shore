@@ -1,0 +1,62 @@
+
+.accomodations_grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.accomodations_grid_item {
+    position: relative;
+    background-color: pink;
+    flex: 1;
+    height: 400px;
+
+    transition: flex 0.4s ease;
+
+    display: flex;
+}
+
+.suite-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.accomodations_grid_item h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 100;
+}
+
+.accomodations_grid_item p {
+    font-family: 'Jost';
+    font-weight: 100;
+}
+
+.accomodations_grid_item:hover {
+    flex: 2;
+}
+
+.blue_gradient {
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.9),
+        rgb(147, 200, 235)
+    );
+}
+.green_gradient {
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.9),
+        rgb(219, 235, 147)
+    );
+}
+.yellow_gradient {
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.9),
+        rgb(147, 235, 159)
+    );
+}

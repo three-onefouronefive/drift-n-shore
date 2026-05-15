@@ -1,0 +1,228 @@
+.contact_enquiry_form_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    margin-bottom: 3px;
+}
+
+.contact_enquiry_content {
+    padding-left: 100px;
+    padding-bottom: 200px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact_enquiry_wrapper {
+    width: 100%;
+    height: fit-content;
+    background-color: #fdfaf6;
+}
+
+.contact_enquiry_question_categories {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    background-color: #fdfaf6;
+    border: 2px #cec2b0 solid;
+    height: 50px;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.contact_enquiry_question_categories > label {
+    font-family: 'Jost';
+    letter-spacing: 1.3px;
+    opacity: 0.7;
+    font-size: 0.9em;
+}
+
+.contact_white {
+    color: white;
+}
+
+.contact_enquiry_form_wrapper {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 2;
+    min-width: 0;
+}
+
+.contact_enquiry_card {
+    flex: 1;
+    min-width: 320px;
+    padding: clamp(30px, 4vw, 50px);
+    background: linear-gradient(0deg, rgba(44, 62, 58, 1) 0%, rgba(69, 94, 89, 1) 100%);
+}
+
+.contact_enquiry_form_wrapper > label {
+    font-family: 'Jost';
+    letter-spacing: 1.3px;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.contact_enquiry_form_wrapper > h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 100;
+    font-size: 5em;
+}
+
+.contact_enquiry_form_wrapper > p {
+    font-family: 'Jost';
+    font-weight: 100;
+    line-height: 2;
+    font-size: 1.2em;
+    max-width: 760px;
+    opacity: 0.6;
+}
+
+.contact_enquiry_cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact_enquiry_cta > p {
+    font-family: 'Jost';
+    font-weight: 100;
+    line-height: 2;
+    font-size: 1.15em;
+    max-width: 500px;
+    opacity: 0.4;
+}
+
+.contact_jost_subtitle {
+    font-family: 'Jost';
+    font-weight: 100;
+    letter-spacing: 2.3px;
+    font-size: 0.9em;
+    color: #9a9687;
+}
+
+.contact_jost_bigger {
+    font-family: 'Jost';
+    font-weight: 100;
+    font-size: 1.2em;
+    color: #e8e7e2;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.contact_jost_smaller {
+    font-family: 'Jost';
+    font-size: 0.8em;
+    color: #e8e7e2;
+    opacity: 0.7;
+}
+
+.contact_hr_margin {
+    margin: 20px 0;
+}
+
+.contact_hours_line_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: clamp(0px, 20px, 30px);
+}
+
+.contact_hours_grid_entry {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_hours_grid_entry > label {
+    color: #9a9687;
+    font-family: 'Jost';
+    letter-spacing: 1.1px;
+    font-weight: 100;
+}
+
+.contact_hours_grid_entry > p {
+    color: #adb3af;
+    font-family: 'Jost';
+}
+
+.contact_socials {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact_map {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact_mapoverlay {
+    position: absolute;
+    pointer-events: none;
+    z-index: 99999;
+    bottom: 20px;
+    left: 13%;
+}
+
+.contact_mapoverlay > span {
+    font-family: 'Jost';
+    font-size: 1em;
+    color: white;
+    letter-spacing: 1.5px;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.contact_socials_item {
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.15);
+    border: 1px solid white;
+}
+
+.contact_socials_item > span {
+    font-family: 'Jost';
+    color: white;
+    opacity: 0.6;
+}
+
+.contact_little_space {
+    margin: 40px 0;
+}
+
+.contact_enquiry_question_categories label {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 8px; 
+    transition: color 0.3s ease;
+    opacity: 0.7; 
+}
+
+.contact_enquiry_question_categories label.active_tab {
+    opacity: 1;
+    color: #3d5a52; 
+}
+
+.contact_enquiry_question_categories label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3d5a52;
+    
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact_enquiry_question_categories label.active_tab::after {
+    opacity: 1;
+    transform: translateY(0);
+}

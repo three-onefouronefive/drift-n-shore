@@ -1,0 +1,104 @@
+.amenities_details_white {
+    color: rgb(230, 217, 217);
+}
+
+.amenities_details_taglist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.amenities_details_grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.amenities_details_grid > div {
+    min-height: clamp(300px, 70vh, 500px);
+    position: relative;
+    overflow: hidden;
+    background-color: #fffffa;
+    padding: 20px clamp(15px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.amenities_details_grid > div > p {
+    font-family: 'Jost', sans-serif;
+    max-width: 500px;
+    font-weight: 100;
+    margin-bottom: clamp(20px, 5vw, 40px);
+    font-size: 0.85em;
+}
+
+.amenities_details_taglist > label {
+    font-family: 'Jost', sans-serif;
+    border: 1px solid white;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 0.6em;
+    padding: 2px 15px;
+}
+
+.amenities_details_grid > div:nth-child(1) {
+    grid-column: span 6;
+}
+
+.amenities_details_grid > div:nth-child(2) {
+    grid-column: span 4;
+}
+
+.amenities_details_grid > div:nth-child(3) {
+    grid-column: span 4;
+}
+
+.amenities_details_grid > div:nth-child(4) {
+    grid-column: span 6;
+}
+
+@media (max-width: 900px) {
+    .amenities_details_grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .amenities_details_grid > div:nth-child(n) {
+        grid-column: 1 / -1;
+    }
+}
+
+.amenities_grid4_list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.85em;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+
+    margin-bottom: 30px;
+}
+
+.amenities_watersports_orange {
+    background: radial-gradient(circle at 90% 50%, #8e6e63 0%, #2a1f1d 70%, #1e1817 100%);
+}
+
+.amenities_watersports_grey {
+    background: radial-gradient(circle at 90% 50%, #6e7a7d 0%, #1e2224 70%, #141718 100%);
+}
+
+.amenities_watersports_green {
+    background: radial-gradient(circle at 90% 50%, #4e5c51 0%, #1a1f1b 70%, #121613 100%);
+}
+
+.amenities_scale_down {
+    transform: scale(0.85);
+    transform-origin: top left;
+}
+
+.amenities_margin_up {
+    margin-top: 40px;
+}

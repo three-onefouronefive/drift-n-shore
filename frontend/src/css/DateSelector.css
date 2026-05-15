@@ -1,0 +1,91 @@
+.date_selector_wrapper {
+    max-width: 620px;
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.blue-type {
+    background: #eaf4f4;
+    border: 1px solid #7a9e9f;
+}
+
+.orange-type {
+    background: #f2ede4;
+    border: 1px solid #c9bba8;
+}
+
+.date_box_wrappers {
+    display: flex;
+
+    gap: 2px;
+}
+
+.date_box {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+    padding-left: 30px;
+}
+
+.date_box label {
+    font-family: 'Jost';
+    opacity: 0.8;
+    letter-spacing: 2px;
+    font-size: 0.6em;
+}
+
+.date_box p {
+    font-family: 'Jost';
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    font-size: 0.55em;
+}
+
+.date_box_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date_box_div p {
+    font-size: 1.1em;
+    opacity: 0.3;
+}
+
+.date_box_div h1 {
+    font-weight: 100;
+    font-size: 1em;
+    font-family: 'CormorantGaramond';
+}
+
+.duration_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #eaf4f4;
+}
+
+.duration_label {
+    font-family: 'Jost';
+    opacity: 0.6;
+}
+
+.duration_days {
+    font-family: 'CormorantGaramond';
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.date_selector_border_wrapper {
+    display: flex;
+    flex-direction: column;
+
+    border: 1.5px solid #c9bba8;
+}

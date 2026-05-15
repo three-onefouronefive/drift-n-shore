@@ -1,0 +1,114 @@
+.amenities_wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2c3e3a;
+
+    display: flex; 
+    padding: 50px;
+    padding-top: 130px;
+}
+
+.amenities_right-col {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    grid-template-rows: repeat(3, 170px);
+    column-gap: 2px;
+    row-gap: 2px;
+}
+
+.amenities_grid-item {
+    background: #364744;
+    border: #42524f 1px solid;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.amenities_grid-item h1 {
+    transition: transform 0.7s ease;
+}
+
+.amenities_grid-item:hover h1 {
+    transform: scale(1.2);
+}
+
+.amenities_grid-item p {
+    opacity: 0.65;
+    font-family: "Jost";
+
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+
+.amenities_grid-item h1 {
+    font-size: 3em;
+}
+
+.amenities_header {
+    color: white;
+    font-weight: 100;
+    line-height: 1.2;
+    font-family: 'CormorantGaramond';
+    font-weight: 100;
+    font-size: 3.5em;
+}
+
+.amenities_subtitle {
+    font-family: 'Jost';
+    color: white;
+    letter-spacing: 2px;
+    opacity: 0.8;
+
+    font-size: 0.75em;
+}
+
+.amenities_left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 40px;
+    padding-right: 90px;
+}
+
+.amenities_text {
+    font-family: 'Jost';
+    color: white;
+    opacity: 0.9;
+
+    max-width: 600px;
+}
+
+.amenities_cta {
+    font-family: 'Jost';
+    color: white;
+    opacity: 0.85;
+    letter-spacing: 3px;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.amenities_cta::after {
+    content: '';
+    position: absolute;
+    width: 23ch;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #027e63;
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.6s ease-out;
+}
+
+.amenities_cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

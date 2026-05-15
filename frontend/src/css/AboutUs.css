@@ -1,0 +1,94 @@
+.overall-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.aboutus-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    padding: 50px;
+    overflow-y: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 70px;
+    width: 50%;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.jost_font {
+    font-family: 'Jost';
+}
+
+.garamond_font {
+    font-family: 'CormorantGaramond';
+}
+
+.upper_subtitle {
+    font-weight: 100;
+    opacity: 0.8;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+}
+
+.content_text {
+    max-width: 550px;
+    font-weight: 100;
+    line-height: 2;
+    opacity: 0.8;
+}
+
+.heading {
+    font-weight: 100;
+    line-height: 1.1;
+    font-size: 3em;
+    opacity: 0.8;
+}
+
+.image {
+    width: 50%;
+}
+
+.image img {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.cta {
+    letter-spacing: 3px;
+    opacity: 0.7;
+    font-size: 0.9em;
+    cursor: pointer;
+
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    width: 30ch;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #027e63;
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

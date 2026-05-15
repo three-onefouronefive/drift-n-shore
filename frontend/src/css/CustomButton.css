@@ -1,0 +1,39 @@
+.button-primary {
+    font-family: 'Jost';
+    font-size: 1em;
+    min-width: 200px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4px;
+
+    height: 30px;
+    padding: 25px 35px;
+
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    transition: border-color 0.1s ease, background-color 0.1s ease;
+}
+
+.button-primary:hover {
+    border-color: transparent;
+    background-color: #7A9E9F;
+}
+
+.button-secondary {
+    padding: 12px 30px;
+    cursor: pointer;
+    font-family: "Jost";
+    font-size: 1em;
+    letter-spacing: 2px;
+
+    color: white;
+    border: 1px white solid;
+    height: 52px;
+    background-color: #2C3E3A;
+}

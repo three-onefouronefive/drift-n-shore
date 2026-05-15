@@ -1,0 +1,250 @@
+.reservation_main_receipt {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-sizing: border-box;
+    padding: 0 100px;
+    padding-top: 140px;
+}
+
+.reservation_main_receipt,
+.reservation_main_receipt p,
+.reservation_main_receipt h1,
+.reservation_main_receipt label,
+.reservation_main_receipt span,
+.reservation_main_receipt div {
+    color: whitesmoke !important;
+}
+
+.reservation_main_receipt > p {
+    font-family: 'Jost';
+    opacity: 0.8;
+    font-size: 0.9;
+    margin-bottom: 0;
+}
+
+.reservation_main_receipt > label {
+    font-family: 'Jost';
+    opacity: 0.8;
+    font-weight: 100;
+    font-size: 0.9em;
+
+    text-align: center;
+    margin-right: 7px;
+}
+
+.reservation_main_receipt > h1 {
+    font-family: 'CormorantGaramond';
+    font-size: 2.8em;
+    font-weight: 200;
+
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+.resrec_photo {
+
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #465959 100%);
+    
+    display: flex;
+    justify-content: flex-start;
+
+    position: relative;
+}
+
+.resrec_photo > p {
+    position: absolute;
+    left: 45px;
+    bottom: 20px;
+
+    font-family: 'CormorantGaramond';
+    font-size: 1.6em;
+}
+
+.resrec_photo_sub {
+    width: 100%;
+    height: 50px;
+    background-color: #364744;
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+.resrec_photo_sub > p {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    text-align: bottom left;
+
+    font-family: 'Jost';
+    font-weight: 100;
+    opacity: 0.78;
+    font-size: 1em;
+}
+
+.reservation_receipt_date_range_wrap {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.reservation_receipt_date_range {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation_receipt_date_range > label {
+    font-family: 'Jost';
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+
+.reservation_receipt_date_range > h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 100;
+}
+
+.reservation_receipt_date_range > p {
+    font-family: 'Jost';
+    font-weight: 100;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+
+.reservation_receipt_total_nights {
+    width: 100%;
+    height: 70px;
+    background-color: #374c49;
+    border: 1px solid #849c98;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.reservation_receipt_total_nights > label {
+    font-family: 'Jost';
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.reservation_receipt_total_nights > p {
+    font-family: 'CormorantGaramond';
+    font-weight: 300;
+    font-size: 1.8em;
+}
+
+.reservation_receipt_price {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.reservation_receipt_price_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation_receipt_price_item > p {
+    font-family: 'Jost';
+    font-weight: 100;
+    font-size: 1.15em;
+}
+
+.reservation_receipt_price_item > label {
+    font-family: 'Jost';
+    opacity: 0.8;
+    font-size: 1.1em;
+}
+
+.reservation_receipt_total {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0;
+    align-items: center;
+}
+
+.reservation_receipt_total > label {
+    font-family: 'Jost';
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    opacity: 0.7;
+}
+
+.reservation_receipt_total_price_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation_receipt_total_price_wrapper > label {
+    opacity: 0.3;
+    font-family: 'Jost';
+}
+
+.reservation_receipt_total_price_wrapper > p {
+    font-family: 'CormorantGaramond';
+    font-weight: 200;
+    font-size: 2.5em;
+}
+
+.reservation_receipt_service_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: 'Jost';
+    letter-spacing: 0.7px;
+    opacity: 0.8;
+    font-weight: 100;
+
+    margin-bottom: 50px;
+}
+
+.reservation_receipt_complete_btn {
+    background-color: #7a9e9f;
+    padding: 20px 50px;
+
+    font-family: 'Jost';
+    font-size: 1.1em;
+    color: #dee4e2;
+
+    border: none;
+}
+
+.reservation_receipt_save_btn {
+    background-color: transparent;
+    border: 1px solid whitesmoke;
+
+    font-family: 'Jost';
+    padding: 10px 60px;
+    color: whitesmoke;
+    opacity: 0.7;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 0.4s ease forwards;
+}

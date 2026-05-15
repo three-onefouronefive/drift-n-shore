@@ -1,0 +1,38 @@
+.contact_faq_wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fdfaf6;
+    padding: clamp(20px, 8vw, 100px);
+    box-sizing: border-box;
+}
+
+.contact_faq_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: clamp(1px, 3px, 5px);
+}
+
+.contact_faq_grid_text {
+    width: 100%;
+    min-height: 150px;
+
+    border: 2px solid #c9bba8;
+    padding: clamp(20px, 40px, 50px);
+    box-sizing: border-box;
+}
+
+.contact_faq_grid_text > h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 400;
+    font-size: 2em;
+    
+    margin-bottom: 10px;
+}
+
+.contact_faq_grid_text > p {
+    font-family: 'Jost';
+    line-height: 1.8;
+    font-weight: 100;
+    opacity: 0.8;
+}

@@ -1,0 +1,78 @@
+.reservation_service_selector_grid_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    row-gap: 2px;
+    column-gap: 2px;
+}
+
+.reservation_service_selector_grid_item {
+    width: 100%;
+    height: 90px;
+
+    border: 2px solid #c9bba8;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rss_grid_item_wrapper {
+    gap: 5px;
+}
+
+.rss_grid_item_wrapper > label {
+    font-size: 2.5em;
+}
+
+.rss_griditem_label {
+    font-family: 'Jost';
+    font-size: 1.1em;
+}
+
+.rss_griditem_label > label {
+    font-weight: 800;
+}
+
+.rss_griditem_label > p {
+    opacity: 0.5;
+    font-weight: 100;
+}
+
+.reservation_service_selector_grid_item > p {
+    font-family: 'CormorantGaramond';
+    font-size: 1.8em;
+    flex: 1;
+}
+
+.rss_grid_item_wrapper { 
+    display: flex;
+    justify-content: flex-start;
+    flex: 3;
+}
+
+.check_box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #c9bba8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0; 
+    margin: 0 15px;
+}
+
+
+.check_box.checked {
+    background-color: #a69177; 
+    border-color: #a69177;
+    color: white; 
+}
+
+.check_box svg {
+    width: 14px;
+    height: 14px;
+}

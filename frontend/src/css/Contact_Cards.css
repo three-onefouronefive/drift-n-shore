@@ -1,0 +1,60 @@
+.contact_cards_wrapper {
+    background-color: #f2ede4;
+    width: 100%;
+    min-height: 100vh;
+    padding: clamp(20px, 8vw, 100px);
+    box-sizing: border-box;
+}
+
+.contact_card {
+    width: 100%;
+    min-height: 250px;
+    background-color: #fdfaf6;
+    border: 2px #d3c7b7 solid;
+    padding: clamp(15px, 2.5vw, 25px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.contact_card_margin_bottom_a_bit {
+    margin-bottom: 30px;
+}
+
+.contact_card_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3px;
+}
+
+.contact_card > label {
+    width: 100%;
+    font-size: clamp(1.2em, 3vw, 2.5em);
+}
+
+.contact_card > h1 {
+    font-family: 'CormorantGaramond';
+    font-weight: 100;
+    font-size: clamp(1.1em, 2.8vw, 2.3em);
+}
+
+.contact_card > p {
+    font-family: 'Jost';
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+.contact_card_email {
+    font-family: 'Jost';
+    color: #7fa0a1;
+    word-break: break-word;
+}
+
+.contact_card_phone {
+    font-family: 'Jost';
+    opacity: 0.6;
+    letter-spacing: 1.2px;
+}

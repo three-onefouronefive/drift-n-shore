@@ -1,0 +1,37 @@
+.company-stats-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    background-color: #F2EDE4;
+    height: 130px;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+
+    flex-grow: 1;
+
+    border: 1px solid #c3beb6;
+    height: 100%;
+}
+
+.part h1 {
+    margin-top: 20px;
+    font-family: 'CormorantGaramond';
+    font-weight: 300;
+}
+
+.part p {
+    font-family: 'Jost';
+    font-size: 0.65em;
+}
+
+.comstats_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
