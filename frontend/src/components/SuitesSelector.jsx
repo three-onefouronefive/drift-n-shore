@@ -33,8 +33,48 @@ function SuitesSelector() {
             description: "Nestled within a curated botanical garden, this private villa offers seclusion and greenery in equal measure. A wraparound deck, outdoor soaking tub, and direct garden path to the beach complete the experience.",
             suite_info: { size: "70 sqm", bed: "Queen", capacity: "2-3 Guests", view: "Garden" },
             tags: ["garden_view", "pool_access"],
+            features: ["FOREST BALCONY", "RAIN SHOWER", "TIMBER INTERIOR", "MOOD LIGHTING"],
+            price: "₱9,800"
+        },
+        {
+            id: "3",
+            title: "ELEVATED SUITE",
+            header: "Treetop Loft",
+            description: "Elevated among the forest canopy, this loft-style suite offers a rare perspective -- where the treetops meet the sky. Exposed timber beams, lantern lighting, and a forest-facing balcony create a sanctuary above all.",
+            suite_info: { size: "55 sqm", bed: "King Loft", capacity: "2 Guests", view: "Forest" },
+            tags: ["garden_view"],
             features: ["OUTDOOR SOAKING TUB", "WRAPAROUND DECK", "GARDEN ACCESS", "HAMMOCK"],
             price: "₱12,500"
+        },
+        {
+            id: "4",
+            title: "PREMIUM SUITE",
+            header: "Dusk Penthouse",
+            description: "The crown of Drift & Shore. A full-floor penthouse suite with 360° views, a rooftop infinity pool, private dining area, and a dedicated in-suite concierge. Designed for those who refuse to settle for anything less.",
+            suite_info: { size: "140 sqm", bed: "Super King", capacity: "2-4 Guests", view: "360° Panorama" },
+            tags: ["pool_access", "premium", "ocean_view"],
+            features: ["ROOFTOP INFINITY POOL", "PRIVATE CONCIERGE", "IN-SUITE DINING", "JACUZZI", "WINE CELLAR ACCESS"],
+            price: "₱38,000"
+        },
+        {
+            id: "5",
+            title: "FAMILY SUITE",
+            header: "Shore Bungalow",
+            description: "Spacious, beachside, and built for making memories. The Shore Bungalow features two bedrooms, a shared living area, a private beach path, and a shaded patio with lounge seating for the whole family.",
+            suite_info: { size: "95 sqm", bed: "2 Bedrooms", capacity: "Up to 5 Guests", view: "Beach Access" },
+            tags: ["ocean_view"],
+            features: ["PRIVATE BEACH PATH", "SHADED PATIO", "KIDS WELCOME", "LIVING AREA"],
+            price: "₱22,000"
+        },
+        {
+            id: "6",
+            title: "CLASSIC SUITE",
+            header: "Cove Room",
+            description: "Everything you need, nothing you don't. The Cove Room is the entry into the Drift & Shore experience -- still thoughtfully designed, still beautifully appointed, and still close enough to the ocean to hear the waves at night.",
+            suite_info: { size: "38 sqm", bed: "Double", capacity: "2 Guests", view: "Coastal Garden" },
+            tags: ["garden_view", "pool_access"],
+            features: ["GARDEN VIEW", "WALK-IN SHOWER", "POOL ACCESS", "BREAKFAST INCLUDED"],
+            price: "₱7,200"
         },
     ];
 
