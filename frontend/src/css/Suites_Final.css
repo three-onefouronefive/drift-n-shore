@@ -1,0 +1,40 @@
+.suites-final__wrapper {
+    display: flex;
+    padding: 40px 50px;
+    gap: 10px;
+    justify-content: space-evenly;
+    background-color: #f2ede4;
+
+    border-top: 1px solid #d1c5b4;
+    border-bottom: 1.5px solid #d1c5b4;
+}
+
+.suites-final__item {
+    display: flex;
+    gap: 5px;
+}
+
+.suites-final__item:not(:last-child) {
+  border-right: 1.5px solid #d1c5b4; /* The separator line */
+  padding-right: 15px;          /* Space before the line */
+  margin-right: 15px;           /* Space after the line */
+}
+
+.suites-final__item > label {
+    font-size: 1.5rem;
+}
+
+.suites-final__text > label {
+    font-family: 'Jost';
+    letter-spacing: 1.2px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.suites-final__text > p {
+    font-family: 'Jost';
+    font-width: 100;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
