@@ -28,6 +28,7 @@
     margin-bottom: 2rem;
 
     max-width: 60vw;
+    z-index: 99999;
 }
 
 /* --- Common Element Blocks --- */
@@ -55,7 +56,8 @@
 }
 
 .booking-widget__input {
-    padding: 6px 0;
+    padding: 6px;
+    padding-right: 10px;
     border: 1px solid #fdfaf6;
     background-color: #fdfaf6;
     cursor: pointer;
@@ -84,7 +86,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 100;
+    z-index: 2147483647;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     overflow: hidden;
@@ -101,9 +103,6 @@
     justify-content: center;
     align-content: center;
     border: 1px solid #cabca9;
-    padding: 1.5rem 1rem;
-
-
 }
 
 .booking-widget__guest-wrapper > button {
@@ -184,7 +183,7 @@
 
 /* --- Active Tag Filter System --- */
 .booking-widget__filters {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     border-top: 1px solid #cabca9;
     border-bottom: 1px solid #cabca9;
     width: 95vw;
@@ -291,7 +290,7 @@
 /* --- Child Text Specifications Column --- */
 .booking-widget__suite-details {
   flex: 1;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,6 +324,7 @@
   font-family: 'Jost';
   font-weight: lighter;
   opacity: 0.7;
+  z-index: 0;
 }
 
 /* --- Specs Quick Read strip --- */
@@ -426,7 +426,7 @@
 }
 
 .booking-widget__field {
-    padding: 30px 30;
+    padding: 30px 30px;
     background-color: #fdfaf6;
 
     width: 100%;

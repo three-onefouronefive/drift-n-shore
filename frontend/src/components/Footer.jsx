@@ -17,7 +17,7 @@ function Footer() {
                     <div className='contact_column'>
                         <h1>NAVIGATE</h1>
                         <Link to="/"><p>Home</p></Link>
-                        <p>Suites</p>
+                        <Link to="/suites"><p>Suites</p></Link>
                         <Link to="/amenities"><p>Amenities</p></Link>
                         <p>Dining</p>
                         <Link to="/contact"><p>Contact</p></Link>

@@ -1,6 +1,6 @@
 .navbar {
     position: fixed;
-    z-index: 99;
+    z-index: 2147483647;
 
     box-sizing: border-box;
     height: 80px;
