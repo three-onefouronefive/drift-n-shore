@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import CustomButton from '../components/CustomButton.jsx';
 
 import '../css/SuitesSelector.css';
 
@@ -20,9 +21,9 @@ function SuitesSelector() {
             id: "1",
             title: "SIGNATURE SUITE",
             header: "Ocean Front Suite",
-            description: "Perched at the edge of the resort with an unobstructed panoramic sea view.",
+            description: "Perched at the edge of the resort with an unobstructed panoramic sea view. Floor-to-ceiling glass panels frame the horizon like a living painting. Includes a private terrace with plunge pool and outdoor daybed.",
             suite_info: { size: "85 sqm", bed: "King", capacity: "2 Guests", view: "Ocean" },
-            tags: ["ocean_view", "premium"],
+            tags: ["ocean_view", "premium", "pool_access"],
             features: ["PRIVATE PLUNGE POOL", "RAIN SHOWER", "BUTLER SERVICE", "OCEAN TERRACE", "MINI BAR"],
             price: "₱18,000"
         },
@@ -216,7 +217,7 @@ function SuitesSelector() {
 
             {/* Target IDs Active Tag Filter Buttons */}
             <div className="booking-widget__filters">
-                <h4 className="booking-widget__section-title">Select View / Category:</h4>
+                <h4 className="booking-widget__section-title">FILTER BY</h4>
                 <div className="booking-widget__tag-container">
                     {AVAILABLE_FILTERS.map((filter) => {
                         const isSelected = activeTag === filter.id;
@@ -236,11 +237,80 @@ function SuitesSelector() {
             <hr className="booking-widget__divider" />
 
             {/* Dynamic Key Output Display */}
-            <div className="booking-widget__output">
-                <h4 className="booking-widget__output-title">Allowed Suite IDs:</h4>
-                <p className="booking-widget__output-display">
-                    [ {filteredSuiteIds.join(", ")} ]
-                </p>
+            {/* --- Suites Inventory Grid --- */}
+            <div className="booking-widget__suites-list">
+                {suites
+                    .filter((suite) => !activeTag || suite.tags.includes(activeTag))
+                    .map((suite, index) => {
+                        const isEvenRow = index % 2 === 0;
+
+                        return (
+                            <div
+                                key={suite.id}
+                                className={`booking-widget__suite-card ${!isEvenRow ? "booking-widget__suite-card--reverse" : ""}`}
+                            >
+                                {/* Media Section */}
+                                <div className="booking-widget__suite-media">
+                                    {/* Replace source path with your actual image state or public folder string */}
+                                    <img
+                                        src={`/images/suite-${suite.id}.jpg`}
+                                        alt={suite.title}
+                                        className="booking-widget__suite-image"
+                                    />
+                                </div>
+
+                                {/* Details Section */}
+                                <div className="booking-widget__suite-details">
+                                    <span className="booking-widget__suite-meta-title">{suite.title}</span>
+                                    <h3 className="booking-widget__suite-name">{suite.header}</h3>
+                                    <p className="booking-widget__suite-description">{suite.description}</p>
+
+                                    {/* Spec Sheet Strip */}
+                                    <div className="booking-widget__suite-specs">
+                                        <div className="booking-widget__suites-specs-text">
+                                            <label>📐</label>
+                                            <p>SIZE</p>
+                                            <span>{suite.suite_info.size}</span>
+                                        </div>
+                                        <div className="booking-widget__suites-specs-text">
+                                            <label>🛏️</label>
+                                            <p>BED</p>
+                                            <span>{suite.suite_info.bed}</span>
+                                        </div>
+                                        <div className="booking-widget__suites-specs-text">
+                                            <label>👥</label>
+                                            <p>CAPACITY</p>
+                                            <span>{suite.suite_info.capacity}</span>
+                                        </div>
+                                        <div className="booking-widget__suites-specs-text">
+                                            <label>🖼️</label>
+                                            <p>VIEW</p>
+                                            <span>{suite.suite_info.view}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Features Tags */}
+                                    <div className="booking-widget__suite-features">
+                                        {suite.features.map((feature, fIdx) => (
+                                            <span key={fIdx} className="booking-widget__suite-feature-tag">
+                                                {feature}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Price and Call to Action */}
+                                    <div className="booking-widget__suite-footer">
+                                        <div className="booking-widget__suite-price-container">
+                                            <span className="booking-widget__suite-price-label">STARTING FROM</span>
+                                            <span className="booking-widget__suite-price-value">{suite.price} <span className="booking-widget__suite-price-value-tackon">/ night</span></span>
+                                        </div>
+                                        <CustomButton text="DETAILS" variant="tertiary"/>
+                                        <CustomButton text="BOOK SUITE" variant="secondary"/>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
             </div>
         </div>
     );

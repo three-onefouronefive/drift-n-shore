@@ -6,6 +6,8 @@ function CustomButton({ text, variant }) {
         type = "button-primary";
     } else if (variant === "secondary") {
         type = "button-secondary";
+    } else if (variant === "tertiary") {
+        type = "button-tertiary";
     }
 
     return (

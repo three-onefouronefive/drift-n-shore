@@ -37,3 +37,16 @@
     height: 52px;
     background-color: #2C3E3A;
 }
+
+.button-tertiary {
+    padding: 12px 30px;
+    cursor: pointer;
+    font-family: "Jost";
+    font-size: 1em;
+    letter-spacing: 2px;
+
+    color: black;
+    border: 1px #aea69b solid;
+    background-color: transparent;
+    height: 52px;
+}
