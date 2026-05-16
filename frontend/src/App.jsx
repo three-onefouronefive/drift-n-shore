@@ -9,6 +9,7 @@ import Reservation from './pages/Reservation/Reservation'
 import Amenities from './pages/Amenities/Amenities'
 import Contact from './pages/Contact/Contact'
 import Suites from './pages/Suites/Suites'
+import Dining from './pages/Dining/Dining'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/suites" element={<Suites />} />
                 <Route path="/amenities" element={<Amenities />} />
-                <Route path="/dining" element={<div>Dining coming soon</div>} />
+                <Route path="/dining" element={<Dining />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/reserve" element={
                     <ReservationProvider>
