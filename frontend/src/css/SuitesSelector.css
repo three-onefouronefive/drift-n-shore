@@ -1,175 +1,213 @@
 /* --- Core Container --- */
 .booking-widget {
-  padding: 2rem;
-  font-family: sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
 }
 
 /* --- Flexible Inputs Strip --- */
 .booking-widget__header {
-  display: flex;
-  gap: 1rem;
-  background-color: #f5f5f7;
-  padding: 1rem;
-  border-radius: 8px;
-  align-items: flex-end;
-  margin-bottom: 2rem;
+    display: flex;
+    background-color: #fdfaf6;
+    border: 1px solid #d9cfc1;
+    align-items: flex-end;
+    margin-bottom: 2rem;
 }
 
 /* --- Common Element Blocks --- */
 .booking-widget__input-group {
-  flex: 1;
+    flex: 1;
+
+    border: 1px solid #cabca9;
+    padding: 1.5rem 1rem;
 }
 
 .booking-widget__label {
-  display: block;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 4px;
+    display: block;
+    font-size: 12px;
+    font-weight: light;
+    color: #93b0b0;
+
+    font-family: 'Jost';
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .booking-widget__input {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
+    padding: 6px 0;
+    border: 1px solid #fdfaf6;
+    background-color: #fdfaf6;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: 'CormorantGaramond';
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.booking-widget__input-group>p {
+    font-family: 'Jost';
+    font-size: 0.8rem;
+    opacity: 0.55;
 }
 
 /* --- Calendar Substructure --- */
 .booking-widget__calendar-wrapper {
-  position: relative;
-  display: flex;
-  gap: 0.5rem;
-  flex: 2;
+    position: relative;
+    display: flex;
+    flex: 2;
 }
 
 .booking-widget__calendar-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 8px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
 }
 
 /* --- Guest Dropdown Substructure --- */
 .booking-widget__guest-wrapper {
-  position: relative;
-  flex: 1;
+    position: relative;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #cabca9;
+    padding: 1.5rem 1rem;
+}
+
+.booking-widget__guest-wrapper > button {
+    margin: 3px 0;
+    border: none;
+    background-color: #fdfaf6;
+    padding: 3px 0;
+
+    font-family: 'CormorantGaramond';
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.booking-widget__guest-wrapper  > p {
+    font-family: 'Jost';
+    font-size: 0.8rem;
+    opacity: 0.7;
 }
 
 .booking-widget__guest-trigger {
-  width: 100%;
-  padding: 8px;
-  text-align: left;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: white;
-  cursor: pointer;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .booking-widget__guest-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 12px;
-  z-index: 90;
-  margin-top: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+    z-index: 90;
+    margin-top: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .booking-widget__guest-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .booking-widget__guest-row:not(:last-child) {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .booking-widget__guest-type {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 /* --- Counter Unit Inside Guest Dropdown --- */
 .booking-widget__counter {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .booking-widget__counter-btn {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 .booking-widget__counter-value {
-  margin: 0 8px;
-  min-width: 16px;
-  text-align: center;
-  display: inline-block;
+    margin: 0 8px;
+    min-width: 16px;
+    text-align: center;
+    display: inline-block;
 }
 
 /* --- Active Tag Filter System --- */
 .booking-widget__filters {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .booking-widget__section-title {
-  margin: 0 0 8px 0;
+    margin: 0 0 8px 0;
 }
 
 .booking-widget__tag-container {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .booking-widget__tag-btn {
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.1s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.1s ease;
 }
 
 /* Modifier state for the active selection tag */
 .booking-widget__tag-btn--active {
-  border: 1px solid #000;
-  background-color: #000;
-  color: #fff;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
 }
 
 /* --- Separation & Results Display --- */
 .booking-widget__divider {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 2rem 0;
 }
 
 .booking-widget__output-title {
-  margin: 0 0 4px 0;
+    margin: 0 0 4px 0;
 }
 
 .booking-widget__output-display {
-  color: #000;
-  font-size: 16px;
-  font-family: monospace;
-  letter-spacing: 1px;
-  margin: 0;
+    color: #000;
+    font-size: 16px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    margin: 0;
 }

@@ -118,6 +118,13 @@
     font-family: 'CormorantGaramond';
 }
 
+.booking-widget .rdrMonthAndYearPickers,
+.booking-widget .rdrMonthAndYearPickers select {
+  font-family: 'CormorantGaramond', sans-serif !important;
+  font-weight: 500; 
+  color: #333333;    
+}
+
 .rdrDayNumber {
     height: 100% !important;
     display: flex !important;

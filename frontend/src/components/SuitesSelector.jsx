@@ -76,6 +76,23 @@ function SuitesSelector() {
         return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
     };
 
+    const start = dateRange[0].startDate;
+    const end = dateRange[0].endDate;
+
+    const totalNights = (() => {
+        if (!start || !end) return 0;
+
+        const diffInMs = Math.abs(end - start);
+
+        return Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+    })();
+
+    const getFullDayName = (date) => {
+        if (!date) return "";
+
+        return date.toLocaleDateString('en-US', { weekday: 'long' });
+    };
+
     return (
         <div className="booking-widget">
 
@@ -93,6 +110,7 @@ function SuitesSelector() {
                             value={formatDateStr(dateRange[0].startDate)}
                             onClick={() => setIsCalendarOpen(true)}
                         />
+                        <p>{`${getFullDayName(dateRange[0].startDate)}`}</p>
                     </div>
 
                     <div className="booking-widget__input-group">
@@ -104,12 +122,14 @@ function SuitesSelector() {
                             value={formatDateStr(dateRange[0].endDate)}
                             onClick={() => setIsCalendarOpen(true)}
                         />
+                        <p>{`${getFullDayName(dateRange[0].endDate)} ⋅ ${totalNights} nights`}</p>
                     </div>
 
                     {isCalendarOpen && (
                         <div className="booking-widget__calendar-dropdown">
                             <DateRange
                                 editableDateInputs={true}
+                                showDateDisplay={false}
                                 onChange={(item) => setDateRange([item.selection])}
                                 moveRangeOnFirstSelection={false}
                                 ranges={dateRange}
@@ -126,8 +146,9 @@ function SuitesSelector() {
                         onClick={() => setIsGuestOpen(!isGuestOpen)}
                         className="booking-widget__guest-trigger"
                     >
-                        {guestCnt.adults} Adults, {guestCnt.kids} Kids
+                        {guestCnt.adults} Adults
                     </button>
+                    <p>{guestCnt.kids} children</p>
 
                     {isGuestOpen && (
                         <div className="booking-widget__guest-dropdown">
