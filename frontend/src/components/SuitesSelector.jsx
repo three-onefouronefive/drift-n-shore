@@ -135,182 +135,182 @@ function SuitesSelector() {
     };
 
     return (
-        <div className="booking-widget">
+        <div className="booking-widget-god">
+            <div className="booking-widget">
 
-            {/* Inputs Header */}
-            <div className="booking-widget__header">
+                {/* Inputs Header */}
+                <div className="booking-widget__header">
 
-                {/* Check In / Out */}
-                <div ref={calendarRef} className="booking-widget__calendar-wrapper">
-                    <div className="booking-widget__input-group">
-                        <label className="booking-widget__label">Check In</label>
-                        <input
-                            type="text"
-                            readOnly
-                            className="booking-widget__input"
-                            value={formatDateStr(dateRange[0].startDate)}
-                            onClick={() => setIsCalendarOpen(true)}
-                        />
-                        <p>{`${getFullDayName(dateRange[0].startDate)}`}</p>
-                    </div>
-
-                    <div className="booking-widget__input-group">
-                        <label className="booking-widget__label">Check Out</label>
-                        <input
-                            type="text"
-                            readOnly
-                            className="booking-widget__input"
-                            value={formatDateStr(dateRange[0].endDate)}
-                            onClick={() => setIsCalendarOpen(true)}
-                        />
-                        <p>{`${getFullDayName(dateRange[0].endDate)} ⋅ ${totalNights} nights`}</p>
-                    </div>
-
-                    {isCalendarOpen && (
-                        <div className="booking-widget__calendar-dropdown">
-                            <DateRange
-                                editableDateInputs={true}
-                                showDateDisplay={false}
-                                onChange={(item) => setDateRange([item.selection])}
-                                moveRangeOnFirstSelection={false}
-                                ranges={dateRange}
-                                minDate={new Date()}
+                    {/* Check In / Out */}
+                    <div ref={calendarRef} className="booking-widget__calendar-wrapper">
+                        <div className="booking-widget__input-group">
+                            <label className="booking-widget__label">Check In</label>
+                            <input
+                                type="text"
+                                readOnly
+                                className="booking-widget__input"
+                                value={formatDateStr(dateRange[0].startDate)}
+                                onClick={() => setIsCalendarOpen(true)}
                             />
+                            <p>{`${getFullDayName(dateRange[0].startDate)}`}</p>
                         </div>
-                    )}
-                </div>
 
-                {/* Guests Select */}
-                <div ref={guestRef} className="booking-widget__guest-wrapper">
-                    <label className="booking-widget__label">Guests</label>
-                    <button
-                        onClick={() => setIsGuestOpen(!isGuestOpen)}
-                        className="booking-widget__guest-trigger"
-                    >
-                        {guestCnt.adults} Adults
-                    </button>
-                    <p>{guestCnt.kids} children</p>
-
-                    {isGuestOpen && (
-                        <div className="booking-widget__guest-dropdown">
-                            <div className="booking-widget__guest-row">
-                                <span className="booking-widget__guest-type">Adults</span>
-                                <div className="booking-widget__counter">
-                                    <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, adults: Math.max(1, p.adults - 1) }))}>-</button>
-                                    <span className="booking-widget__counter-value">{guestCnt.adults}</span>
-                                    <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, adults: p.adults + 1 }))}>+</button>
-                                </div>
-                            </div>
-
-                            <div className="booking-widget__guest-row">
-                                <span className="booking-widget__guest-type">Kids</span>
-                                <div className="booking-widget__counter">
-                                    <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, kids: Math.max(0, p.kids - 1) }))}>-</button>
-                                    <span className="booking-widget__counter-value">{guestCnt.kids}</span>
-                                    <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, kids: p.kids + 1 }))}>+</button>
-                                </div>
-                            </div>
+                        <div className="booking-widget__input-group">
+                            <label className="booking-widget__label">Check Out</label>
+                            <input
+                                type="text"
+                                readOnly
+                                className="booking-widget__input"
+                                value={formatDateStr(dateRange[0].endDate)}
+                                onClick={() => setIsCalendarOpen(true)}
+                            />
+                            <p>{`${getFullDayName(dateRange[0].endDate)} ⋅ ${totalNights} nights`}</p>
                         </div>
-                    )}
-                </div>
-            </div>
 
-            {/* Target IDs Active Tag Filter Buttons */}
-            <div className="booking-widget__filters">
-                <h4 className="booking-widget__section-title">FILTER BY</h4>
-                <div className="booking-widget__tag-container">
-                    {AVAILABLE_FILTERS.map((filter) => {
-                        const isSelected = activeTag === filter.id;
-                        return (
-                            <button
-                                key={filter.id}
-                                onClick={() => handleFilterToggle(filter.id)}
-                                className={`booking-widget__tag-btn ${isSelected ? "booking-widget__tag-btn--active" : ""}`}
-                            >
-                                {filter.label}
-                            </button>
-                        );
-                    })}
-                </div>
-            </div>
+                        {isCalendarOpen && (
+                            <div className="booking-widget__calendar-dropdown">
+                                <DateRange
+                                    editableDateInputs={true}
+                                    showDateDisplay={false}
+                                    onChange={(item) => setDateRange([item.selection])}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={dateRange}
+                                    minDate={new Date()}
+                                />
+                            </div>
+                        )}
+                    </div>
 
-            <hr className="booking-widget__divider" />
+                    {/* Guests Select */}
+                    <div ref={guestRef} className="booking-widget__guest-wrapper">
+                        <label className="booking-widget__label">Guests</label>
+                        <button
+                            onClick={() => setIsGuestOpen(!isGuestOpen)}
+                            className="booking-widget__guest-trigger"
+                        >
+                            {guestCnt.adults} Adults
+                        </button>
+                        <p>{guestCnt.kids} children</p>
 
-            {/* Dynamic Key Output Display */}
-            {/* --- Suites Inventory Grid --- */}
-            <div className="booking-widget__suites-list">
-                {suites
-                    .filter((suite) => !activeTag || suite.tags.includes(activeTag))
-                    .map((suite, index) => {
-                        const isEvenRow = index % 2 === 0;
-
-                        return (
-                            <div
-                                key={suite.id}
-                                className={`booking-widget__suite-card ${!isEvenRow ? "booking-widget__suite-card--reverse" : ""}`}
-                            >
-                                {/* Media Section */}
-                                <div className="booking-widget__suite-media">
-                                    {/* Replace source path with your actual image state or public folder string */}
-                                    <img
-                                        src={`/images/suite-${suite.id}.jpg`}
-                                        alt={suite.title}
-                                        className="booking-widget__suite-image"
-                                    />
+                        {isGuestOpen && (
+                            <div className="booking-widget__guest-dropdown">
+                                <div className="booking-widget__guest-row">
+                                    <span className="booking-widget__guest-type">Adults</span>
+                                    <div className="booking-widget__counter">
+                                        <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, adults: Math.max(1, p.adults - 1) }))}>-</button>
+                                        <span className="booking-widget__counter-value">{guestCnt.adults}</span>
+                                        <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, adults: p.adults + 1 }))}>+</button>
+                                    </div>
                                 </div>
 
-                                {/* Details Section */}
-                                <div className="booking-widget__suite-details">
-                                    <span className="booking-widget__suite-meta-title">{suite.title}</span>
-                                    <h3 className="booking-widget__suite-name">{suite.header}</h3>
-                                    <p className="booking-widget__suite-description">{suite.description}</p>
-
-                                    {/* Spec Sheet Strip */}
-                                    <div className="booking-widget__suite-specs">
-                                        <div className="booking-widget__suites-specs-text">
-                                            <label>📐</label>
-                                            <p>SIZE</p>
-                                            <span>{suite.suite_info.size}</span>
-                                        </div>
-                                        <div className="booking-widget__suites-specs-text">
-                                            <label>🛏️</label>
-                                            <p>BED</p>
-                                            <span>{suite.suite_info.bed}</span>
-                                        </div>
-                                        <div className="booking-widget__suites-specs-text">
-                                            <label>👥</label>
-                                            <p>CAPACITY</p>
-                                            <span>{suite.suite_info.capacity}</span>
-                                        </div>
-                                        <div className="booking-widget__suites-specs-text">
-                                            <label>🖼️</label>
-                                            <p>VIEW</p>
-                                            <span>{suite.suite_info.view}</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Features Tags */}
-                                    <div className="booking-widget__suite-features">
-                                        {suite.features.map((feature, fIdx) => (
-                                            <span key={fIdx} className="booking-widget__suite-feature-tag">
-                                                {feature}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* Price and Call to Action */}
-                                    <div className="booking-widget__suite-footer">
-                                        <div className="booking-widget__suite-price-container">
-                                            <span className="booking-widget__suite-price-label">STARTING FROM</span>
-                                            <span className="booking-widget__suite-price-value">{suite.price} <span className="booking-widget__suite-price-value-tackon">/ night</span></span>
-                                        </div>
-                                        <CustomButton text="DETAILS" variant="tertiary"/>
-                                        <CustomButton text="BOOK SUITE" variant="secondary"/>
+                                <div className="booking-widget__guest-row">
+                                    <span className="booking-widget__guest-type">Kids</span>
+                                    <div className="booking-widget__counter">
+                                        <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, kids: Math.max(0, p.kids - 1) }))}>-</button>
+                                        <span className="booking-widget__counter-value">{guestCnt.kids}</span>
+                                        <button className="booking-widget__counter-btn" onClick={() => setGuestCnt(p => ({ ...p, kids: p.kids + 1 }))}>+</button>
                                     </div>
                                 </div>
                             </div>
-                        );
-                    })}
+                        )}
+                    </div>
+                </div>
+
+                {/* Target IDs Active Tag Filter Buttons */}
+                <div className="booking-widget__filters">
+                    <h4 className="booking-widget__section-title">FILTER BY</h4>
+                    <div className="booking-widget__tag-container">
+                        {AVAILABLE_FILTERS.map((filter) => {
+                            const isSelected = activeTag === filter.id;
+                            return (
+                                <button
+                                    key={filter.id}
+                                    onClick={() => handleFilterToggle(filter.id)}
+                                    className={`booking-widget__tag-btn ${isSelected ? "booking-widget__tag-btn--active" : ""}`}
+                                >
+                                    {filter.label}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Dynamic Key Output Display */}
+                {/* --- Suites Inventory Grid --- */}
+                <div className="booking-widget__suites-list">
+                    {suites
+                        .filter((suite) => !activeTag || suite.tags.includes(activeTag))
+                        .map((suite, index) => {
+                            const isEvenRow = index % 2 === 0;
+
+                            return (
+                                <div
+                                    key={suite.id}
+                                    className={`booking-widget__suite-card ${!isEvenRow ? "booking-widget__suite-card--reverse" : ""}`}
+                                >
+                                    {/* Media Section */}
+                                    <div className="booking-widget__suite-media">
+                                        {/* Replace source path with your actual image state or public folder string */}
+                                        <img
+                                            src={`/images/suite-${suite.id}.jpg`}
+                                            alt={suite.title}
+                                            className="booking-widget__suite-image"
+                                        />
+                                    </div>
+
+                                    {/* Details Section */}
+                                    <div className="booking-widget__suite-details">
+                                        <span className="booking-widget__suite-meta-title">{suite.title}</span>
+                                        <h3 className="booking-widget__suite-name">{suite.header}</h3>
+                                        <p className="booking-widget__suite-description">{suite.description}</p>
+
+                                        {/* Spec Sheet Strip */}
+                                        <div className="booking-widget__suite-specs">
+                                            <div className="booking-widget__suites-specs-text">
+                                                <label>📐</label>
+                                                <p>SIZE</p>
+                                                <span>{suite.suite_info.size}</span>
+                                            </div>
+                                            <div className="booking-widget__suites-specs-text">
+                                                <label>🛏️</label>
+                                                <p>BED</p>
+                                                <span>{suite.suite_info.bed}</span>
+                                            </div>
+                                            <div className="booking-widget__suites-specs-text">
+                                                <label>👥</label>
+                                                <p>CAPACITY</p>
+                                                <span>{suite.suite_info.capacity}</span>
+                                            </div>
+                                            <div className="booking-widget__suites-specs-text">
+                                                <label>🖼️</label>
+                                                <p>VIEW</p>
+                                                <span>{suite.suite_info.view}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Features Tags */}
+                                        <div className="booking-widget__suite-features">
+                                            {suite.features.map((feature, fIdx) => (
+                                                <span key={fIdx} className="booking-widget__suite-feature-tag">
+                                                    {feature}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        {/* Price and Call to Action */}
+                                        <div className="booking-widget__suite-footer">
+                                            <div className="booking-widget__suite-price-container">
+                                                <span className="booking-widget__suite-price-label">STARTING FROM</span>
+                                                <span className="booking-widget__suite-price-value">{suite.price} <span className="booking-widget__suite-price-value-tackon">/ night</span></span>
+                                            </div>
+                                            <CustomButton text="DETAILS" variant="tertiary" />
+                                            <CustomButton text="BOOK SUITE" variant="secondary" />
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                </div>
             </div>
         </div>
     );

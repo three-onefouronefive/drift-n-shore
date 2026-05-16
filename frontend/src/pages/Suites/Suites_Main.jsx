@@ -3,7 +3,12 @@ import SuitesSelector from '../../components/SuitesSelector.jsx';
 import Footer from '../../components/Footer.jsx';
 import Suites_Final from './Suites_Final.jsx';
 
+import { usePageAnimations } from '../../hooks/usePageAnimations'
+
+
 function Suites_Main() {
+    usePageAnimations({ lockScroll: false });
+
     return (
         <>
             <Suites_Hero />

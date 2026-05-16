@@ -1,9 +1,15 @@
 /* --- Core Container --- */
+.booking-widget-god {
+    background-color: #fdfaf6;
+}
+
 .booking-widget {
     font-family: sans-serif;
     max-width: 90vw;
     margin: 0 auto;
-    padding: 150px 0;
+    padding-bottom: 90px;
+
+    background-color: #fdfaf6;
 }
 
 /* --- Flexible Inputs Strip --- */
@@ -243,7 +249,7 @@
 .booking-widget__suite-card {
   display: flex;
   flex-direction: row; 
-  background-color: #ffffff;
+  background-color: #fdfaf6;
   border: 1px solid #cabca9;
   overflow: hidden;
   gap: 2rem;

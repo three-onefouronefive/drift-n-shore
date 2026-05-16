@@ -1,0 +1,28 @@
+.suites_hero_wrapper {
+    width: 100%;
+    height: 75vh;
+
+    background: radial-gradient(circle at top left, #587c7b 0%, #2d4441 60%, #2a3d39 80%);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.suites_hero_wrapper > label {
+    font-family: 'Jost';
+    color: beige;
+    opacity: 0.8;
+    letter-spacing: 1.1px;
+    font-size: 0.9rem;
+}
+
+.suites_hero_wrapper > h1 {
+    font-family: 'CormorantGaramond';
+    color: rgb(234, 231, 231);
+    font-weight: normal;
+
+    font-size: 3.4rem;
+}

@@ -5,8 +5,8 @@ function Suites_Hero() {
     return (
         <>
             <div className="suites_hero_wrapper">
-                {/* Add the suite selector here */}
-                {/* Add the tag selector here */}
+                <label>ACCOMODATIONS</label>
+                <h1>Our <span className='italics suites-hero_bluish'>Suites</span></h1>
             </div>
         </>
     )
