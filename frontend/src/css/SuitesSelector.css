@@ -1,23 +1,29 @@
 /* --- Core Container --- */
 .booking-widget-god {
     background-color: #fdfaf6;
+    position: relative;
 }
 
 .booking-widget {
     font-family: sans-serif;
     max-width: 90vw;
     margin: 0 auto;
-    padding-bottom: 90px;
+    padding: 90px 0;
 
     background-color: #fdfaf6;
 }
 
 /* --- Flexible Inputs Strip --- */
 .booking-widget__header {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
     background-color: #fdfaf6;
     border: 1px solid #d9cfc1;
-    align-items: flex-end;
+    align-items: stretch;
     margin: 0 auto;
     margin-bottom: 2rem;
 
@@ -29,7 +35,12 @@
     flex: 1;
 
     border: 1px solid #cabca9;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.5rem;
+    padding-right: 8rem;
+
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
 }
 
 .booking-widget__label {
@@ -91,13 +102,13 @@
     align-content: center;
     border: 1px solid #cabca9;
     padding: 1.5rem 1rem;
+
+
 }
 
 .booking-widget__guest-wrapper > button {
-    margin: 3px 0;
     border: none;
     background-color: #fdfaf6;
-    padding: 3px 0;
 
     font-family: 'CormorantGaramond';
     font-size: 1.2em;
@@ -112,7 +123,7 @@
 
 .booking-widget__guest-trigger {
     width: 100%;
-    padding: 8px;
+    padding: 8px 0;
     text-align: left;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -126,13 +137,11 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 12px;
+    background-color: #fcf9f5;
+    padding: 20px;
     z-index: 90;
     margin-top: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .booking-widget__guest-row {
@@ -146,7 +155,8 @@
 }
 
 .booking-widget__guest-type {
-    font-size: 14px;
+    font-size: 18px;
+    font-style: italic;
 }
 
 /* --- Counter Unit Inside Guest Dropdown --- */
@@ -159,6 +169,10 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
+
+    background-color: transparent;
+    border: 1px solid #cabca9;
+    border-radius: 20%;
 }
 
 .booking-widget__counter-value {
@@ -184,7 +198,6 @@
 }
 
 .booking-widget__section-title {
-    margin: 0 0 8px 0;
     font-family: 'Jost';
     letter-spacing: 1.2px;
     opacity: 0.6;
@@ -202,7 +215,7 @@
     padding: 6px 12px;
     border: 1px solid #cabca9;
     font-family: 'Jost';
-    background-color: #fff;
+    background-color: transparent;
     color: #333;
     cursor: pointer;
     font-size: 12px;
@@ -253,6 +266,7 @@
   border: 1px solid #cabca9;
   overflow: hidden;
   gap: 2rem;
+  min-height: 600px;
 }
 
 /* --- Modifier State for Odd Index Subsections --- */
@@ -298,7 +312,6 @@
   font-size: 34px;
   margin: 0 0 1rem 0;
   color: #1d1d1f;
-
   font-family: 'CormorantGaramond';
   font-weight: lighter;
   font-style: italic;
@@ -404,4 +417,30 @@
 
 .booking-widget__suites-specs-text > span {
     font-family: 'Jost';
+}
+
+.booking-widget_buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+.booking-widget__field {
+    padding: 30px 30;
+    background-color: #fdfaf6;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: 'CormorantGaramond';
+    font-size: 1.2em;
+    font-weight: 500;
+
+    line-height: 1.2;
+    min-height: 42px;
+
+    display: flex;
+    align-items: flex-start;
+
+    margin: 0;
 }

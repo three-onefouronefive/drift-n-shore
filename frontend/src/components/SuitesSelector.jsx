@@ -143,7 +143,7 @@ function SuitesSelector() {
 
                     {/* Check In / Out */}
                     <div ref={calendarRef} className="booking-widget__calendar-wrapper">
-                        <div className="booking-widget__input-group">
+                        <div className="booking-widget__input-group booking-widget__field">
                             <label className="booking-widget__label">Check In</label>
                             <input
                                 type="text"
@@ -155,7 +155,7 @@ function SuitesSelector() {
                             <p>{`${getFullDayName(dateRange[0].startDate)}`}</p>
                         </div>
 
-                        <div className="booking-widget__input-group">
+                        <div className="booking-widget__input-group booking-widget__field">
                             <label className="booking-widget__label">Check Out</label>
                             <input
                                 type="text"
@@ -182,13 +182,13 @@ function SuitesSelector() {
                     </div>
 
                     {/* Guests Select */}
-                    <div ref={guestRef} className="booking-widget__guest-wrapper">
+                    <div ref={guestRef} className="booking-widget__guest-wrapper booking-widget__field">
                         <label className="booking-widget__label">Guests</label>
                         <button
                             onClick={() => setIsGuestOpen(!isGuestOpen)}
                             className="booking-widget__guest-trigger"
                         >
-                            {guestCnt.adults} Adults
+                            {guestCnt.adults} {guestCnt.adults > 1 ? "Adults" : "Adult"}
                         </button>
                         <p>{guestCnt.kids} children</p>
 
@@ -303,8 +303,11 @@ function SuitesSelector() {
                                                 <span className="booking-widget__suite-price-label">STARTING FROM</span>
                                                 <span className="booking-widget__suite-price-value">{suite.price} <span className="booking-widget__suite-price-value-tackon">/ night</span></span>
                                             </div>
-                                            <CustomButton text="DETAILS" variant="tertiary" />
-                                            <CustomButton text="BOOK SUITE" variant="secondary" />
+                                            <div className="booking-widget_buttons">
+                                                <CustomButton text="DETAILS" variant="tertiary" />
+                                                <CustomButton text="BOOK SUITE" variant="secondary" />
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
