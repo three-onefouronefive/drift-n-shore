@@ -18,7 +18,7 @@ function Home_Hero() {
                 <p className='text-subtitle first-fade'>A sanctuary carved from the shoreline and silence. Drift & Shore invites you to unplug, unwind, and float somewhere between luxury and the horizon.</p>
                 <div className='hero-content-buttons second-fade'>
                     <Link to="/reserve"><CustomButton text="BOOK YOUR STAY" variant="primary" /></Link>
-                    <CustomButton text="EXPLORE SUITES" variant="primary" />
+                    <Link to="/suites"><CustomButton text="EXPLORE SUITES" variant="primary" /></Link>
                 </div>
             </div>
 

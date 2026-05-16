@@ -5,6 +5,7 @@ import "react-date-range/dist/theme/default.css";
 import CustomButton from '../components/CustomButton.jsx';
 
 import '../css/SuitesSelector.css';
+import { Link } from "react-router-dom";
 
 function SuitesSelector() {
     // Master list of available filters
@@ -305,7 +306,7 @@ function SuitesSelector() {
                                             </div>
                                             <div className="booking-widget_buttons">
                                                 <CustomButton text="DETAILS" variant="tertiary" />
-                                                <CustomButton text="BOOK SUITE" variant="secondary" />
+                                                <Link to='/reserve'><CustomButton text="BOOK SUITE" variant="secondary" /></Link>
                                             </div>
 
                                         </div>

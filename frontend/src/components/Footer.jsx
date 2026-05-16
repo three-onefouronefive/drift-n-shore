@@ -44,7 +44,14 @@ function Footer() {
                     <div className='footer_legal_legal '>
                         <p>Privacy</p>
                         <p>Terms</p>
-                        <p>Sitemap</p>
+                        <a
+                            href="https://github.com/three-onefouronefive/drift-n-shore"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="external-link"
+                        >
+                            <p>Source</p>
+                        </a>
                     </div>
                 </div>
             </div>
