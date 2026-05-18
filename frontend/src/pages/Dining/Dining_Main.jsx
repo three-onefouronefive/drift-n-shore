@@ -124,7 +124,7 @@ const DiningContent = () => {
             {/* 1. HERO SECTION */}
             <section className="ds-hero">
                 <div className="ds-hero-inner">
-                    <div className="ds-hero-text">
+                    <div className="ds-hero-text anim-up">
                         <span className="ds-label">———— DINING AT DRIFT & SHORE</span>
                         <h1 className="ds-serif-title">Where the sea <br /><i>seasons everything.</i></h1>
                         <p className="ds-description">
@@ -137,7 +137,7 @@ const DiningContent = () => {
                         </div>
                     </div>
 
-                    <div className="ds-hours-card">
+                    <div className="ds-hours-card anim-up">
                         <div className="ds-icon-plate">🍽️</div>
                         <p className="ds-label">DINNER HOURS</p>
                         <h2 className="ds-time">6-10 PM</h2>
@@ -152,7 +152,7 @@ const DiningContent = () => {
                 {diningVenues.map((venue) => (
                     <div
                         key={venue.id}
-                        className={`ds-nav-item ${activeVenue.id === venue.id ? 'active' : ''}`}
+                        className={`ds-nav-item anim-up ${activeVenue.id === venue.id ? 'active' : ''}`}
                         onClick={() => setActiveVenue(venue)}
                         style={{ cursor: 'pointer' }}
                     >
@@ -340,17 +340,17 @@ const DiningContent = () => {
             )}
 
             <section className='ds-reviews'>
-                <div className='ds-reviews-one'>
+                <div className='ds-reviews-one anim-up'>
                     <label>★★★★★</label>
                     <h1>"The freshest ceviche I've ever had. The chef came out to explain where every ingredient was caught. Dinner felt like theatre."</h1>
                     <p>— R. MENDOZA · OCEAN FRONT SUITE GUEST</p>
                 </div>
-                <div className='ds-reviews-one'>
+                <div className='ds-reviews-one anim-up'>
                     <label>★★★★★</label>
                     <h1>"We did the private beach dinner for our anniversary. The candles, the waves, the food — honestly we forgot there was a resort behind us."</h1>
                     <p>— THE SANTOS FAMILY · SHORE BUNGALOW</p>
                 </div>
-                <div className='ds-reviews-one'>
+                <div className='ds-reviews-one anim-up'>
                     <label>★★★★★</label>
                     <h1>"The Undertow Bar is deceptively dangerous. You go for one cocktail and suddenly you've watched the sun fully set and ordered a third."</h1>
                     <p>— M. DE LEON · TREETOP LOFT GUEST</p>
@@ -360,12 +360,14 @@ const DiningContent = () => {
             {/* 4. FINAL CTA */}
             <section className="ds-final-cta">
                 <div className='ds-cta-s1'>
-                    <h2 className="ds-serif-h2">Come hungry. <br /><i>Leave speechless.</i></h2>
-                    <p className="ds-labels">Reservations recommended for dinner. Walk-ins warmly welcomed when space allows.</p>
+                    <h2 className="ds-serif-h2 anim-up">Come hungry. <br /><i>Leave speechless.</i></h2>
+                    <p className="ds-labels anim-up">Reservations recommended for dinner. Walk-ins warmly welcomed when space allows.</p>
                 </div>
-                <div className="ds-cta-btns">
-                    <CustomButton text="RESERVE A TABLE" variant="golden"/>
-                    <CustomButton text="DOWNLOAD FULL MENU" variant="primary"/>
+                <div className="ds-cta-btns anim-up">
+                    <div onClick={() => navigate('/reserve')}>
+                        <CustomButton text="RESERVE A TABLE" variant="golden" />
+                    </div>
+                    <CustomButton text="DOWNLOAD FULL MENU" variant="primary" />
                 </div>
             </section>
 

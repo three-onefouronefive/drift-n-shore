@@ -1,8 +1,10 @@
 import DNSSymbol from '../assets/images/logo.png'
 import '../css/Footer.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function Footer() {
+    const navigate = useNavigate();
+
     return (
         <>
             <div className='contact_wrapper'>
@@ -19,10 +21,10 @@ function Footer() {
                         <Link to="/"><p>Home</p></Link>
                         <Link to="/suites"><p>Suites</p></Link>
                         <Link to="/amenities"><p>Amenities</p></Link>
-                        <p>Dining</p>
+                        <Link to="/dining"><p>Dining</p></Link>
                         <Link to="/contact"><p>Contact</p></Link>
                     </div>
-                    <div className='contact_column'>
+                    <div className='contact_column' onClick={() => navigate('/suites')}>
                         <h1>SUITES</h1>
                         <p>Ocean Front</p>
                         <p>Garden Villa</p>
