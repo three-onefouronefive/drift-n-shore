@@ -8,6 +8,10 @@ function CustomButton({ text, variant }) {
         type = "button-secondary";
     } else if (variant === "tertiary") {
         type = "button-tertiary";
+    } else if (variant === "golden") {
+        type = "button-golden";
+    } else if (variant === "transparent") {
+        type = "button-transparent";
     }
 
     return (

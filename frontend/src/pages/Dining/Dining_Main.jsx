@@ -9,15 +9,15 @@ const DiningContent = () => {
             <section className="ds-hero">
                 <div className="ds-hero-inner">
                     <div className="ds-hero-text">
-                        <span className="ds-label">DINING AT DRIFT & SHORE</span>
+                        <span className="ds-label">———— DINING AT DRIFT & SHORE</span>
                         <h1 className="ds-serif-title">Where the sea <br /><i>seasons everything.</i></h1>
                         <p className="ds-description">
                             Three dining experiences under one roof — from alfresco feasts at the ocean's edge
                             to late-night cocktails that taste like the sea breeze feels. We cook what the tide brings in.
                         </p>
                         <div className="ds-hero-actions">
-                            <button className="ds-btn-gold">RESERVE A TABLE</button>
-                            <button className="ds-btn-outline">VIEW MENU</button>
+                            <CustomButton text="RESERVE A TABLE" variant="golden"/>
+                            <CustomButton text="VIEW MENU" variant="transparent"/>
                         </div>
                     </div>
 
