@@ -50,13 +50,12 @@ const DiningContent = () => {
             label: "BAR & LOUNGE",
             tagline: "BAR & LOUNGE",
             capacity: "45 covers · Indoor & Lounge",
-            bgClass: "ds-bg-navy", 
-            description: "A subterranean-inspired cocktail sanctuary. Sink into velvet lounge chairs while mixologists craft artisanal elixirs mixed with locally foraging botanicals, house infusions, and spirits.",
+            bgClass: "ds-bg-navy",
+            description: "Named after the invisible pull that makes the ocean irresistible, The Undertow Bar is where the night takes over. Behind the bar, our mixologists treat each cocktail like a small tide -- building flavour in layers, with patience and a pinch of salt. Low lighting, wicker seating, the soft sound of the sea, and a rum list deep enough to dive into.",
             hours: [
-                { label: "HAPPY HOUR", time: "4 — 6 PM" },
-                { label: "NIGHTLY", time: "5 PM — 1 AM" },
-                { label: "BITES", time: "5 — 11 PM" },
-                { label: "DRESS", time: "Resort Chic" }
+                { label: "OPENS", time: "5 PM daily" },
+                { label: "LAST CALL", time: "2 AM" },
+                { label: "HAPPY HOUR", time: "5 — 7 PM" },
             ],
             features: [
                 "Signature coastal cocktails with native flora",
@@ -101,7 +100,7 @@ const DiningContent = () => {
             tagline: "BY RESERVATION",
             capacity: "2 to 12 guests · Exclusive",
             bgClass: "ds-bg-dark-wood",
-            description: "An ultra-exclusive setup structured directly on our sunset jetty or inside a hidden cliffside cove. Experience a completely customized tasting menu executed by a dedicated personal chef.",
+            description: "For proposals, anniversaries, corporate dinners, or simply an evening you want all to yourself. Our private dining room is a candlelit chamber for up to 12 guests, with a bespoke menu designed by the chef around you -- your preferences, your pace, your evening.",
             hours: [
                 { label: "SUNSET", time: "5:30 — 8 PM" },
                 { label: "LATE LUNCH", time: "1 — 3:30 PM" },
@@ -151,8 +150,8 @@ const DiningContent = () => {
             {/* 2. DINING NAVIGATION (DYNAMIC) */}
             <nav className="ds-sub-nav">
                 {diningVenues.map((venue) => (
-                    <div 
-                        key={venue.id} 
+                    <div
+                        key={venue.id}
                         className={`ds-nav-item ${activeVenue.id === venue.id ? 'active' : ''}`}
                         onClick={() => setActiveVenue(venue)}
                         style={{ cursor: 'pointer' }}
@@ -166,140 +165,207 @@ const DiningContent = () => {
                 ))}
             </nav>
 
-            {/* 3. SECTION 01: SPLIT VIEW (DYNAMIC) */}
-            <section className="ds-split-section">
-                <div className={`ds-split-image ${activeVenue.bgClass}`}>
-                    <div className="ds-capacity-badge">
-                        <p className="ds-label">CAPACITY</p>
-                        <p className="ds-label">{activeVenue.capacity}</p>
-                    </div>
-                </div>
-                <div className="ds-split-content ds-bg-cream">
-                    <span className="ds-section-number">{activeVenue.num}</span>
-                    <p className="ds-label">{activeVenue.label}</p>
-                    <h2 className="ds-serif-h2">
-                        {activeVenue.titleName}
-                        <span className="italics">{activeVenue.titleItalic}</span>
-                    </h2>
-                    <p className="ds-body-text">{activeVenue.description}</p>
 
-                    <div className="ds-info-grid">
-                        {activeVenue.hours.map((hourItem, idx) => (
-                            <div key={idx} className="ds-info-item">
-                                <p className="ds-label">{hourItem.label}</p>
-                                <p>{hourItem.time}</p>
+            {activeVenue.id === 'shoreline-breakfast' ? (
+                <section className="ds-morning-panel">
+                    <div className="ds-morning-left">
+                        <span className="ds-morning-service-tag">MORNING SERVICE</span>
+                        <h2 className="ds-morning-title">
+                            The best <br />
+                            <i>alarm clock</i> <br />
+                            is the ocean.
+                        </h2>
+                        <p className="ds-morning-desc">
+                            Every morning at Drift & Shore starts at The Tide Table with a complimentary coastal breakfast for all guests. Think: freshly squeezed juices, local pastries, eggs cooked to order, and a cold brew that actually wakes you up. Dine as the shore lights up.
+                        </p>
+
+                        <div className="ds-morning-meta">
+                            <div>
+                                <span className="ds-morning-meta-label">BREAKFAST HOURS</span>
+                                <p className="ds-morning-meta-val">7:00 — 10:30 AM</p>
                             </div>
-                        ))}
+                            <div>
+                                <span className="ds-morning-meta-label">LOCATION</span>
+                                <p className="ds-morning-meta-val">The Tide Table Terrace</p>
+                            </div>
+                        </div>
+
+                        <div className="ds-morning-menu-grid">
+                            <ul className="ds-morning-menu-column">
+                                <li>Fresh tropical juices</li>
+                                <li>Local pastry basket</li>
+                                <li>Seasonal fruit platter</li>
+                                <li>Smoked fish selection</li>
+                            </ul>
+                            <ul className="ds-morning-menu-column">
+                                <li>Eggs any style</li>
+                                <li>Cold brew & espresso</li>
+                                <li>Yogurt & granola bar</li>
+                                <li>Avocado toast station</li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <ul className="ds-feature-list">
-                        {activeVenue.features.map((feature, idx) => (
-                            <li key={idx}>+ {feature}</li>
-                        ))}
-                    </ul>
-                    <CustomButton text="RESERVE A TABLE" variant="secondary" />
-                </div>
-            </section>
-
-            {/* 4. MENU SELECTION */}
-            <section className="ds-menu-block">
-                <div className="ds-menu-header">
-                    <div>
-                        <p className="ds-label">SAMPLE MENU</p>
-                        <h2 className="ds-serif-h2">Tonight's <i>Selection</i></h2>
+                    <div className="ds-morning-right">
+                        <div className="ds-morning-badge">
+                            INCLUDED WITH EVERY STAY
+                        </div>
                     </div>
-                    <div className="ds-tab-group">
-                        <button
-                            className={activeTab === 'starters' ? 'active' : ''}
-                            onClick={() => setActiveTab('starters')}
-                        >
-                            STARTERS
-                        </button>
-                        <button
-                            className={activeTab === 'mains' ? 'active' : ''}
-                            onClick={() => setActiveTab('mains')}
-                        >
-                            MAINS
-                        </button>
-                        <button
-                            className={activeTab === 'desserts' ? 'active' : ''}
-                            onClick={() => setActiveTab('desserts')}
-                        >
-                            DESSERTS
-                        </button>
+                </section>
+            ) : (
+                <section className="ds-split-section">
+                    <div className={`ds-split-image ${activeVenue.bgClass}`}>
+                        <div className="ds-capacity-badge">
+                            <p className="ds-label">CAPACITY</p>
+                            <p className="ds-label">{activeVenue.capacity}</p>
+                        </div>
                     </div>
-                </div>
+                    <div className="ds-split-content ds-bg-cream">
+                        <span className="ds-section-number">{activeVenue.num}</span>
+                        <p className="ds-label">{activeVenue.label}</p>
+                        <h2 className="ds-serif-h2">
+                            {activeVenue.titleName}
+                            <span className="italics">{activeVenue.titleItalic}</span>
+                        </h2>
+                        <p className="ds-body-text">{activeVenue.description}</p>
 
-                <div className="ds-menu-grid">
-                    {menuCategories.map((category) => (
-                        <div key={category.key} className="ds-menu-column">
-                            <h3 className="ds-column-title italics">{category.title}</h3>
-
-                            {/* Safeguard with optional chaining in case data structure changes */}
-                            {currentMenu?.[category.key]?.map((item, index) => (
-                                <div key={`${activeTab}-${category.key}-${index}`} className="ds-menu-item">
-                                    <div className="ds-item-main">
-                                        <span className='ds-item-main-name'>{item.name}</span>
-                                        <span className='ds-item-main-price'>{item.price}</span>
-                                    </div>
-                                    <p className="ds-item-desc">{item.description}</p>
-
-                                    {/* Render single label cleanly if array contains tags */}
-                                    {item.tags && item.tags.length > 0 && (
-                                        <div className="ds-item-tags">
-                                            {item.tags.map((tag, tagIndex) => (
-                                                <label key={tagIndex} className='ds-tag'>{tag}</label>
-                                            ))}
-                                        </div>
-                                    )}
+                        <div className="ds-info-grid">
+                            {activeVenue.hours.map((hourItem, idx) => (
+                                <div key={idx} className="ds-info-item">
+                                    <p className="ds-label">{hourItem.label}</p>
+                                    <p>{hourItem.time}</p>
                                 </div>
                             ))}
                         </div>
-                    ))}
+
+                        <ul className="ds-feature-list">
+                            {activeVenue.features.map((feature, idx) => (
+                                <li key={idx}>+ {feature}</li>
+                            ))}
+                        </ul>
+                        <CustomButton text="RESERVE A TABLE" variant="secondary" />
+                    </div>
+                </section>
+            )}
+
+            {!['undertow', 'shoreline-breakfast'].includes(activeVenue.id) && (
+                <section className="ds-menu-block">
+                    <div className="ds-menu-header">
+                        <div>
+                            <p className="ds-label">SAMPLE MENU</p>
+                            <h2 className="ds-serif-h2">Tonight's <i>Selection</i></h2>
+                        </div>
+                        <div className="ds-tab-group">
+                            <button
+                                className={activeTab === 'starters' ? 'active' : ''}
+                                onClick={() => setActiveTab('starters')}
+                            >
+                                STARTERS
+                            </button>
+                            <button
+                                className={activeTab === 'mains' ? 'active' : ''}
+                                onClick={() => setActiveTab('mains')}
+                            >
+                                MAINS
+                            </button>
+                            <button
+                                className={activeTab === 'desserts' ? 'active' : ''}
+                                onClick={() => setActiveTab('desserts')}
+                            >
+                                DESSERTS
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="ds-menu-grid">
+                        {menuCategories.map((category) => (
+                            <div key={category.key} className="ds-menu-column">
+                                <h3 className="ds-column-title italics">{category.title}</h3>
+
+                                {currentMenu?.[category.key]?.map((item, index) => (
+                                    <div key={`${activeTab}-${category.key}-${index}`} className="ds-menu-item">
+                                        <div className="ds-item-main">
+                                            <span className='ds-item-main-name'>{item.name}</span>
+                                            <span className='ds-item-main-price'>{item.price}</span>
+                                        </div>
+                                        <p className="ds-item-desc">{item.description}</p>
+
+                                        {item.tags && item.tags.length > 0 && (
+                                            <div className="ds-item-tags">
+                                                {item.tags.map((tag, tagIndex) => (
+                                                    <label key={tagIndex} className='ds-tag'>{tag}</label>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {activeVenue.id === 'undertow' && (
+                <section className="ds-pours-section">
+                    <div className="ds-pours-header">
+                        <h2 className="ds-serif-h2">Signature <i>Pours</i></h2>
+                        <p className="ds-pours-desc">Every cocktail on our list is built around the coast — using sea salt, local citrus, and aged rums.</p>
+                    </div>
+                    <div className="ds-pours-grid">
+                        <div className="ds-pour-card" style={{ background: '#8ba7a5' }}>
+                            <div className="ds-glass-icon">🍸</div>
+                            <h4>The Drift</h4>
+                            <p className="ds-label">GIN BASE</p>
+                            <p className="ds-pour-price">₱380</p>
+                        </div>
+                        <div className="ds-pour-card" style={{ background: '#c5a044' }}>
+                            <div className="ds-glass-icon">🥃</div>
+                            <h4>Amber Shore</h4>
+                            <p className="ds-label">RUM BASE</p>
+                            <p className="ds-pour-price">₱420</p>
+                        </div>
+                        <div className="ds-pour-card" style={{ background: '#b97754' }}>
+                            <div className="ds-glass-icon">🍹</div>
+                            <h4>Low Tide</h4>
+                            <p className="ds-label">MEZCAL BASE</p>
+                            <p className="ds-pour-price">₱450</p>
+                        </div>
+                        <div className="ds-pour-card" style={{ background: '#5b7a4d' }}>
+                            <div className="ds-glass-icon">🍸</div>
+                            <h4>Green Horizon</h4>
+                            <p className="ds-label">VODKA BASE</p>
+                            <p className="ds-pour-price">₱350</p>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            <section className='ds-reviews'>
+                <div className='ds-reviews-one'>
+                    <label>★★★★★</label>
+                    <h1>"The freshest ceviche I've ever had. The chef came out to explain where every ingredient was caught. Dinner felt like theatre."</h1>
+                    <p>— R. MENDOZA · OCEAN FRONT SUITE GUEST</p>
+                </div>
+                <div className='ds-reviews-one'>
+                    <label>★★★★★</label>
+                    <h1>"We did the private beach dinner for our anniversary. The candles, the waves, the food — honestly we forgot there was a resort behind us."</h1>
+                    <p>— THE SANTOS FAMILY · SHORE BUNGALOW</p>
+                </div>
+                <div className='ds-reviews-one'>
+                    <label>★★★★★</label>
+                    <h1>"The Undertow Bar is deceptively dangerous. You go for one cocktail and suddenly you've watched the sun fully set and ordered a third."</h1>
+                    <p>— M. DE LEON · TREETOP LOFT GUEST</p>
                 </div>
             </section>
 
-            {/* 5. SIGNATURE POURS (COCKTAILS) */}
-            <section className="ds-pours-section">
-                <div className="ds-pours-header">
-                    <h2 className="ds-serif-h2">Signature <i>Pours</i></h2>
-                    <p className="ds-pours-desc">Every cocktail on our list is built around the coast — using sea salt, local citrus, and aged rums.</p>
-                </div>
-                <div className="ds-pours-grid">
-                    <div className="ds-pour-card" style={{ background: '#8ba7a5' }}>
-                        <div className="ds-glass-icon">🍸</div>
-                        <h4>The Drift</h4>
-                        <p className="ds-label">GIN BASE</p>
-                        <p className="ds-pour-price">₱380</p>
-                    </div>
-                    <div className="ds-pour-card" style={{ background: '#c5a044' }}>
-                        <div className="ds-glass-icon">🥃</div>
-                        <h4>Amber Shore</h4>
-                        <p className="ds-label">RUM BASE</p>
-                        <p className="ds-pour-price">₱420</p>
-                    </div>
-                    <div className="ds-pour-card" style={{ background: '#b97754' }}>
-                        <div className="ds-glass-icon">🍹</div>
-                        <h4>Low Tide</h4>
-                        <p className="ds-label">MEZCAL BASE</p>
-                        <p className="ds-pour-price">₱450</p>
-                    </div>
-                    <div className="ds-pour-card" style={{ background: '#5b7a4d' }}>
-                        <div className="ds-glass-icon">🍸</div>
-                        <h4>Green Horizon</h4>
-                        <p className="ds-label">VODKA BASE</p>
-                        <p className="ds-pour-price">₱350</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* 6. FINAL CTA */}
+            {/* 4. FINAL CTA */}
             <section className="ds-final-cta">
-                <h2 className="ds-serif-h2">Come hungry. <br /><i>Leave speechless.</i></h2>
-                <p className="ds-label">Reservations recommended for dinner. Walk-ins warmly welcomed when space allows.</p>
+                <div className='ds-cta-s1'>
+                    <h2 className="ds-serif-h2">Come hungry. <br /><i>Leave speechless.</i></h2>
+                    <p className="ds-labels">Reservations recommended for dinner. Walk-ins warmly welcomed when space allows.</p>
+                </div>
                 <div className="ds-cta-btns">
-                    <button className="ds-btn-gold">RESERVE A TABLE</button>
-                    <button className="ds-btn-outline-dark">DOWNLOAD FULL MENU</button>
+                    <CustomButton text="RESERVE A TABLE" variant="golden"/>
+                    <CustomButton text="DOWNLOAD FULL MENU" variant="primary"/>
                 </div>
             </section>
 

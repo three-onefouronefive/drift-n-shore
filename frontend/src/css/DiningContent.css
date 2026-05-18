@@ -404,10 +404,26 @@
 
 /* Final CTA */
 .ds-final-cta {
-  background: #1a1a1a;
+  background: #1a2422;
   color: white;
   padding: 120px 8%;
   text-align: center;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.ds-cta-s1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ds-labels {
+  font-weight: 100;
+  opacity: 0.6;
+  max-width: 550px;
+  text-align: left;
 }
 
 .ds-cta-btns {
@@ -479,4 +495,172 @@
     rgba(190, 100, 40, 0.22) 0%, 
     rgba(5, 3, 2, 0) 70%
   );
+}
+
+.ds-morning-panel {
+  display: flex;
+  width: 100%;
+  min-height: 600px;
+  background-color: #faf8f5;
+  font-family: 'Jost';
+}
+
+.ds-morning-left {
+  flex: 1;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ds-morning-right {
+  flex: 1;
+  background: radial-gradient(circle at 50% 55%, #cca570 0%, #b8935c 45%, #856434 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+.ds-morning-right::after {
+  content: '';
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  filter: blur(5px);
+}
+
+.ds-morning-service-tag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #8da4a6;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.ds-morning-title {
+  font-family: 'CormorantGaramond';
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #2b3a32;
+  margin: 0 0 35px 0;
+}
+
+.ds-morning-title i {
+  font-style: italic;
+  font-family: 'CormorantGaramond';
+}
+
+.ds-morning-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #727d77;
+  max-width: 720px;
+  margin-bottom: 50px;
+  font-weight: 100;
+}
+
+.ds-morning-meta {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 45px;
+}
+
+.ds-morning-meta-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #cca570;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ds-morning-meta-val {
+  font-size: 16px;
+  color: #2b3a32;
+  margin: 0;
+}
+
+.ds-morning-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 40px;
+  max-width: 520px;
+}
+
+.ds-morning-menu-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ds-morning-menu-column li {
+  font-size: 14px;
+  color: #5d6862;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.ds-morning-menu-column li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: -4px;
+  font-size: 24px;
+  color: #bfa38a;
+  line-height: 1;
+}
+
+.ds-morning-badge {
+  background-color: #ffffff;
+  color: #bc935c;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 12px 20px;
+  border-top: 3px solid #5f4a2b;
+  font-weight: 500;
+}
+
+.ds-reviews {
+  background-color: whitesmoke;
+  padding: 50px 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.ds-reviews-one {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 30px;
+}
+
+.ds-reviews-one > label {
+  color: orange;
+}
+
+.ds-reviews-one > h1 {
+  font-family: 'CormorantGaramond';
+  font-weight: 500;
+  font-style: italic;
+  max-width: 450px;
+}
+
+.ds-reviews-one > p {
+  opacity: 0.5;
+  letter-spacing: 1.5px;
+}
+
+
+.ds-reviews-one + .ds-reviews-one {
+  border-left: 1px solid rgb(130, 85, 0);
 }
