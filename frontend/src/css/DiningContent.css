@@ -218,10 +218,6 @@
   position: relative;
 }
 
-.ds-bg-green {
-  background: #2d4133;
-}
-
 .ds-bg-cream {
   background: #f7f0e6;
 }
@@ -437,4 +433,50 @@
   .ds-serif-title {
     font-size: 3.5rem;
   }
+}
+
+.ds-bg-green,
+.ds-bg-navy,
+.ds-bg-sand,
+.ds-bg-dark-wood {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.ds-bg-green {
+  background-color: #1e2d24; 
+  background-image: radial-gradient(
+    circle at 75% 65%, 
+    rgba(210, 123, 56, 0.18) 0%, 
+    rgba(13, 20, 16, 0) 70%
+  );
+}
+
+.ds-bg-navy {
+  background-color: #0b111e; 
+  background-image: radial-gradient(
+    circle at 75% 65%, 
+    rgba(212, 140, 84, 0.15) 0%, 
+    rgba(6, 10, 18, 0) 70%
+  );
+}
+
+.ds-bg-sand {
+  background-color: #2a241f; 
+  background-image: radial-gradient(
+    circle at 75% 65%, 
+    rgba(230, 160, 100, 0.2) 0%, 
+    rgba(22, 19, 16, 0) 70%
+  );
+}
+
+.ds-bg-dark-wood {
+  background-color: #0d0907; 
+  background-image: radial-gradient(
+    circle at 75% 65%, 
+    rgba(190, 100, 40, 0.22) 0%, 
+    rgba(5, 3, 2, 0) 70%
+  );
 }

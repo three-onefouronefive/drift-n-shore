@@ -15,6 +15,109 @@ const DiningContent = () => {
         { key: 'fromTheSea', title: 'From the Sea' },
         { key: 'forTheTable', title: 'For the Table' }
     ];
+    const diningVenues = [
+        {
+            id: "tide-table",
+            num: "01",
+            icon: "🌊",
+            titleName: "The ",
+            titleItalic: "Tide Table",
+            label: "MAIN RESTAURANT",
+            tagline: "MAIN RESTAURANT",
+            capacity: "72 covers · Alfresco",
+            bgClass: "ds-bg-green",
+            description: "Set at the resort's ocean edge with open-air terrace seating, The Tide Table is where the day's catch becomes the evening's conversation. Our head chef sources exclusively from local fishermen and coastal farmers.",
+            hours: [
+                { label: "BREAKFAST", time: "7 — 10:30 AM" },
+                { label: "LUNCH", time: "12 — 2:30 PM" },
+                { label: "DINNER", time: "6 — 10 PM" },
+                { label: "DRESS", time: "Smart Casual" }
+            ],
+            features: [
+                "Daily catch menu, sourced 6AM from local fishermen",
+                "Open-air terrace seating with sea views",
+                "Wood-fired grill and live charcoal station",
+                "Curated coastal wine and craft beverage list",
+                "Complimentary breakfast included for all suite guests"
+            ]
+        },
+        {
+            id: "undertow",
+            num: "02",
+            icon: "🍹",
+            titleName: "The ",
+            titleItalic: "Undertow",
+            label: "BAR & LOUNGE",
+            tagline: "BAR & LOUNGE",
+            capacity: "45 covers · Indoor & Lounge",
+            bgClass: "ds-bg-navy", 
+            description: "A subterranean-inspired cocktail sanctuary. Sink into velvet lounge chairs while mixologists craft artisanal elixirs mixed with locally foraging botanicals, house infusions, and spirits.",
+            hours: [
+                { label: "HAPPY HOUR", time: "4 — 6 PM" },
+                { label: "NIGHTLY", time: "5 PM — 1 AM" },
+                { label: "BITES", time: "5 — 11 PM" },
+                { label: "DRESS", time: "Resort Chic" }
+            ],
+            features: [
+                "Signature coastal cocktails with native flora",
+                "Curated small-plate tapas and raw bar menu",
+                "Live acoustic and ambient vinyl sets on weekends",
+                "Extensive rare rum and premium tequila collection",
+                "Intimate low-lit ocean view alcoves"
+            ]
+        },
+        {
+            id: "shoreline-breakfast",
+            num: "03",
+            icon: "🌅",
+            titleName: "Shoreline ",
+            titleItalic: "Breakfast",
+            label: "MORNING SERVICE",
+            tagline: "MORNING SERVICE",
+            capacity: "60 covers · Beachfront",
+            bgClass: "ds-bg-sand",
+            description: "Greet the morning with your toes literal inches from the tide. Serving artisanal breakfast platters, cold-pressed tropical juices, and premium local single-origin coffees under early rays.",
+            hours: [
+                { label: "DAILY", time: "6 — 11 AM" },
+                { label: "COFFEE", time: "6 AM — 2 PM" },
+                { label: "BUFFET", time: "7 — 10 AM" },
+                { label: "DRESS", label: "Casual / Swimwear Cover" }
+            ],
+            features: [
+                "Fresh bakery baskets delivered to your table",
+                "Live egg, omelet, and local pastry stations",
+                "Cold-pressed wellness shots and fresh coconuts",
+                "Direct premium beach layout access",
+                "À la carte local Filipino breakfast variations"
+            ]
+        },
+        {
+            id: "private-dining",
+            num: "04",
+            icon: "🕯️",
+            titleName: "Private ",
+            titleItalic: "Dining",
+            label: "BY RESERVATION",
+            tagline: "BY RESERVATION",
+            capacity: "2 to 12 guests · Exclusive",
+            bgClass: "ds-bg-dark-wood",
+            description: "An ultra-exclusive setup structured directly on our sunset jetty or inside a hidden cliffside cove. Experience a completely customized tasting menu executed by a dedicated personal chef.",
+            hours: [
+                { label: "SUNSET", time: "5:30 — 8 PM" },
+                { label: "LATE LUNCH", time: "1 — 3:30 PM" },
+                { label: "MOONLIT", time: "8:30 — 11 PM" },
+                { label: "NOTICE", time: "24h Advance" }
+            ],
+            features: [
+                "100% bespoke tailor-made multi-course menu options",
+                "Dedicated personal sommelier and serving butler",
+                "Private solo musician accompaniment upon request",
+                "Customized floral designs and ambient lantern lighting",
+                "Exclusive single-party occupancy security"
+            ]
+        }
+    ];
+    const [activeVenue, setActiveVenue] = useState(diningVenues[0]);
 
     return (
         <main className="ds-dining-container">
@@ -45,57 +148,54 @@ const DiningContent = () => {
                 </div>
             </section>
 
-            {/* 2. DINING NAVIGATION */}
+            {/* 2. DINING NAVIGATION (DYNAMIC) */}
             <nav className="ds-sub-nav">
-                <div className="ds-nav-item active">
-                    <span className="ds-nav-icon">🌊</span>
-                    <div><strong>The Tide Table</strong><p>MAIN RESTAURANT</p></div>
-                </div>
-                <div className="ds-nav-item">
-                    <span className="ds-nav-icon">🍹</span>
-                    <div><strong>The Undertow</strong><p>BAR & LOUNGE</p></div>
-                </div>
-                <div className="ds-nav-item">
-                    <span className="ds-nav-icon">🌅</span>
-                    <div><strong>Shoreline Breakfast</strong><p>MORNING SERVICE</p></div>
-                </div>
-                <div className="ds-nav-item">
-                    <span className="ds-nav-icon">🕯️</span>
-                    <div><strong>Private Dining</strong><p>BY RESERVATION</p></div>
-                </div>
+                {diningVenues.map((venue) => (
+                    <div 
+                        key={venue.id} 
+                        className={`ds-nav-item ${activeVenue.id === venue.id ? 'active' : ''}`}
+                        onClick={() => setActiveVenue(venue)}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        <span className="ds-nav-icon">{venue.icon}</span>
+                        <div>
+                            <strong>{venue.titleName}{venue.titleItalic}</strong>
+                            <p>{venue.tagline}</p>
+                        </div>
+                    </div>
+                ))}
             </nav>
 
-            {/* 3. SECTION 01: THE TIDE TABLE */}
+            {/* 3. SECTION 01: SPLIT VIEW (DYNAMIC) */}
             <section className="ds-split-section">
-                <div className="ds-split-image ds-bg-green">
+                <div className={`ds-split-image ${activeVenue.bgClass}`}>
                     <div className="ds-capacity-badge">
                         <p className="ds-label">CAPACITY</p>
-                        <p className='ds-labelbel'>72 covers · Alfresco</p>
+                        <p className="ds-label">{activeVenue.capacity}</p>
                     </div>
                 </div>
                 <div className="ds-split-content ds-bg-cream">
-                    <span className="ds-section-number">01</span>
-                    <p className="ds-label">MAIN RESTAURANT</p>
-                    <h2 className="ds-serif-h2">The <span className='italics'>Tide Table</span></h2>
-                    <p className="ds-body-text">
-                        Set at the resort's ocean edge with open-air terrace seating, The Tide Table is where the day's
-                        catch becomes the evening's conversation. Our head chef sources exclusively from local
-                        fishermen and coastal farmers.
-                    </p>
+                    <span className="ds-section-number">{activeVenue.num}</span>
+                    <p className="ds-label">{activeVenue.label}</p>
+                    <h2 className="ds-serif-h2">
+                        {activeVenue.titleName}
+                        <span className="italics">{activeVenue.titleItalic}</span>
+                    </h2>
+                    <p className="ds-body-text">{activeVenue.description}</p>
 
                     <div className="ds-info-grid">
-                        <div className="ds-info-item"><p className="ds-label">BREAKFAST</p><p>7 — 10:30 AM</p></div>
-                        <div className="ds-info-item"><p className="ds-label">LUNCH</p><p>12 — 2:30 PM</p></div>
-                        <div className="ds-info-item"><p className="ds-label">DINNER</p><p>6 — 10 PM</p></div>
-                        <div className="ds-info-item"><p className="ds-label">DRESS</p><p>Smart Casual</p></div>
+                        {activeVenue.hours.map((hourItem, idx) => (
+                            <div key={idx} className="ds-info-item">
+                                <p className="ds-label">{hourItem.label}</p>
+                                <p>{hourItem.time}</p>
+                            </div>
+                        ))}
                     </div>
 
                     <ul className="ds-feature-list">
-                        <li>+ Daily catch menu, sourced 6AM from local fishermen</li>
-                        <li>+ Open-air terrace seating with sea views</li>
-                        <li>+ Wood-fired grill and live charcoal station</li>
-                        <li>+ Curated coastal wine and craft beverage list</li>
-                        <li>+ Complimentary breakfast included for all suite guests</li>
+                        {activeVenue.features.map((feature, idx) => (
+                            <li key={idx}>+ {feature}</li>
+                        ))}
                     </ul>
                     <CustomButton text="RESERVE A TABLE" variant="secondary" />
                 </div>
