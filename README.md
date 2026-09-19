@@ -19,6 +19,29 @@ Originally created as a project for my Web Development class, I decided to take 
 * Component-based UI built with React
 * Responsive layouts for different screen sizes
 
+<table>
+  <tr>
+    <td width="50%">
+      <img src="./asset_dump/page1.gif" alt="Page 1 demo">
+      <p align="center"><b>Home Page</b></p>
+    </td>
+    <td width="50%">
+      <img src="./asset_dump/page3.gif" alt="Page 2 demo">
+      <p align="center"><b>Dynamic rendering based on form input</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="./asset_dump/page2.gif" alt="Page 3 demo">
+      <p align="center"><b>Tag-based room searching</b></p>
+    </td>
+    <td width="50%">
+      <img src="./asset_dump/page4.gif" alt="Page 4 demo">
+      <p align="center"><b>Map integration into Contact page</b></p>
+    </td>
+  </tr>
+</table>
+
 ## Tech Stack
 
 * **React** — UI development, routing, and component architecture
@@ -68,7 +91,7 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/drift-n-shore.git
+git clone https://github.com/three-onefouronefive/drift-n-shore.git
 ```
 
 Navigate into the project directory:
