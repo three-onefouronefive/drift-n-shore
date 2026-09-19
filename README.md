@@ -2,23 +2,26 @@
 
 Drift-N-Shore is a frontend website concept for a fictional resort enterprise, designed with a focus on immersive visuals, smooth interactions, and responsive presentation.
 
-Originally created as a project for my Web Development class, I decided to take it further as an opportunity to explore **React**, animation libraries, and modern frontend techniques. The project allowed me to experiment with creating a more polished, presentation-focused experience rather than building a purely functional website.
+Originally created as a project for my Web Development class, I decided to take it further as an opportunity to explore **React** and modern frontend development techniques. Alongside the visual and animation work, I experimented with application features such as client-side routing, dynamic page rendering, room filtering, date selection, and map integration.
 
 **Live Demo:** https://drift-n-shore.vercel.app/
 
 ## Features
 
-* Responsive resort landing page
-* Component-based UI built with React
+* Responsive resort website and landing page
+* Client-side routing for navigating between pages
+* Dynamic room listings and room detail pages
+* Tag-based room searching and filtering
+* Calendar-based date selection
+* Interactive location/map integration
 * Smooth scrolling and scroll-based interactions
 * Animated page elements and transitions
-* Interactive navigation
+* Component-based UI built with React
 * Responsive layouts for different screen sizes
-* Image-focused sections designed around a resort/travel aesthetic
 
 ## Tech Stack
 
-* **React** — UI development and component architecture
+* **React** — UI development, routing, and component architecture
 * **JavaScript** — Application logic and interactivity
 * **CSS** — Styling and responsive layouts
 * **GSAP** — Animations and motion effects
@@ -27,15 +30,32 @@ Originally created as a project for my Web Development class, I decided to take 
 
 ## What I Practiced
 
-This project was mainly an exercise in improving my frontend development skills. In particular, I used it to practice:
+This project served as a hands-on exercise in building a more complete frontend application rather than a purely static website.
 
-* Building reusable React components
-* Structuring a larger frontend project
-* Creating responsive layouts
-* Working with animation libraries
-* Combining scroll interactions with animations
-* Improving visual hierarchy and presentation
-* Deploying a React project with Vercel
+### React & Application Structure
+
+* Building reusable and composable React components
+* Managing application state and user interactions
+* Organizing a multi-page experience within a single frontend application
+* Implementing client-side routing and dynamic routes
+
+### Dynamic Content
+
+* Rendering room information dynamically 
+* Filtering rooms using tags and search criteria
+* Creating reusable layouts for different room details
+* Connecting user input to dynamically rendered content
+
+### User Interaction
+
+* Implementing a calendar/date selector
+* Handling interactive filtering and navigation
+* Integrating an interactive map for resort location information
+* Creating smooth transitions and scroll-based animations
+
+### Visual Development
+
+A significant part of the project was experimenting with how animation and motion could enhance the overall presentation. I used **GSAP** for animations and **Lenis** for smooth scrolling, with the goal of making the website feel more fluid and immersive without letting the animations get in the way of navigation.
 
 ## Getting Started
 
@@ -48,7 +68,7 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed.
 Clone the repository:
 
 ```bash
-git clone https://github.com/three-onefouronefive/drift-n-shore.git
+git clone https://github.com/your-username/drift-n-shore.git
 ```
 
 Navigate into the project directory:
@@ -69,14 +89,16 @@ Start the development server:
 npm run dev
 ```
 
-The project should then be available at the local address provided by Vite.
+The project should then be available at the local address provided by the development server.
 
 ## Project Status
 
-This project is primarily a learning and portfolio project. It may continue to receive improvements as I experiment with React, animation, and frontend development.
+Drift-N-Shore is primarily a learning and portfolio project. While it began as a Web Development class requirement, its scope expanded as I explored additional frontend technologies and interaction patterns.
+
+The project may continue to receive improvements as I further explore React, animation, responsive design, and frontend application development.
 
 ## Credits
 
-Built by Knowell M. Lawas as part of CSIT201 (Web Development).
+Built by Knowell M. Lawas as part of CSIT201.
 
 Deployed with [Vercel](https://vercel.com/).
